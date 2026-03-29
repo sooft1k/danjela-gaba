@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About This Website — Danjela Gaba Architektur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="bilder/icon/favicon.png">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .aw-hero {
+      background: var(--ink);
+      padding: 160px 0 100px;
+      text-align: center;
+    }
+    .aw-hero .section-label {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 20px;
+    }
+    .aw-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      color: var(--stone);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .aw-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--ash-light);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .aw-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--stone-mid);
+    }
+    .aw-section:last-of-type {
+      border-bottom: none;
+    }
+    .aw-section:nth-child(even) {
+      background: var(--white);
+    }
+
+    .aw-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .aw-label {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .aw-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .aw-text {
+      color: var(--ash);
+      line-height: 1.9;
+      font-size: 0.97rem;
+      max-width: 640px;
+    }
+
+    .aw-list {
+      list-style: none;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .aw-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--ink-soft);
+      padding: 14px 20px;
+      background: var(--stone);
+      border: 1px solid var(--stone-mid);
+    }
+    .aw-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .aw-cta-section {
+      background: var(--ink);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .aw-cta-section .aw-label {
+      color: var(--gold);
+    }
+    .aw-cta-section .aw-title {
+      color: var(--stone);
+      margin-bottom: 16px;
+    }
+    .aw-cta-section .aw-text {
+      color: var(--ash-light);
+      margin: 0 auto 48px;
+      max-width: 520px;
+    }
+
+    .aw-contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .aw-btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .aw-btn-email:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .aw-btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: transparent;
+      border: 1px solid rgba(245,242,236,0.25);
+      color: var(--stone);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s, transform 0.3s;
+    }
+    .aw-btn-whatsapp:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    Danjela Gaba
+    <span>Diplom-Ingenieurin · Architektur</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="about.html">Über Mich</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
+    <li><a href="about-website.html" class="active">About This Website</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-nav" class="mobile-nav">
+  <a href="index.html" onclick="toggleNav()">Startseite</a>
+  <a href="about.html" onclick="toggleNav()">Über Mich</a>
+  <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+  <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
+  <a href="faq.html" onclick="toggleNav()">FAQ</a>
+  <a href="contact.html" onclick="toggleNav()" style="color: var(--gold-light);">Kontakt →</a>
+  <a href="about-website.html" onclick="toggleNav()">About This Website</a>
+</div>
+
+<!-- HERO -->
+<section class="aw-hero">
+  <span class="section-label">Webdesign & Entwicklung</span>
+  <h1>About This<br><em>Website</em></h1>
+  <p>Diese Website wurde erstellt, um die Arbeit und das Portfolio von Danjela Gaba online zu präsentieren. Das Ziel war eine moderne, übersichtliche und schnelle Website, auf der Besucher leicht erkennen können, welche Leistungen angeboten werden.</p>
+</section>
+
+<!-- SECTION 1 -->
+<section class="aw-section">
+  <div class="aw-inner">
+    <span class="aw-label">Umsetzung</span>
+    <h2 class="aw-title">Design &amp; Entwicklung</h2>
+    <p class="aw-text">Das Design und die Entwicklung dieser Website wurden von mir Lennard Gaba umgesetzt. Ich habe das Layout, die Struktur sowie die technische Umsetzung der Seite erstellt, mit Fokus auf modernes Design, schnelle Ladezeiten und eine optimale Nutzung auf Smartphones.</p>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="aw-section">
+  <div class="aw-inner">
+    <span class="aw-label">Leistungen</span>
+    <h2 class="aw-title">Meine Arbeit an<br>dieser Website</h2>
+    <ul class="aw-list">
+      <li>Webdesign</li>
+      <li>Entwicklung der Website</li>
+      <li>Mobile Optimierung</li>
+      <li>Struktur &amp; Benutzerführung</li>
+      <li>Performance Optimierung</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="aw-section">
+  <div class="aw-inner">
+    <span class="aw-label">Tech Stack</span>
+    <h2 class="aw-title">Verwendete<br>Technologien</h2>
+    <ul class="aw-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Responsive Design</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="aw-cta-section">
+  <div class="aw-inner">
+    <span class="aw-label">Für potenzielle Kunden</span>
+    <h2 class="aw-title">Brauchen Sie auch<br>eine Website?</h2>
+    <p class="aw-text">Wenn Ihnen diese Website gefällt und Sie ebenfalls eine moderne Website für Ihr Unternehmen, Ihr Portfolio oder Ihr Geschäft möchten, können Sie mich gerne kontaktieren.</p>
+    <div class="aw-contact-buttons">
+      <a href="mailto:gabalennard@gmail.com" class="aw-btn-email">
+        ✉ gabalennard@gmail.com
+      </a>
+      <a href="https://wa.me/436769325769" target="_blank" class="aw-btn-whatsapp">
+        WhatsApp · +43 676 932 5769
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-credit">Website by Lennard Gaba</span>
+  <span class="footer-brand">© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span>
+  <div class="footer-links">
+    <a href="javascript:void(0)" onclick="openModal('impressum')">Impressum</a>
+    <a href="javascript:void(0)" onclick="openModal('datenschutz')">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

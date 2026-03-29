@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Danjela Gaba Architektur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="bilder/icon/favicon.png">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Danjela Gaba<span>Diplom-Ingenieurin · Architektur</span></a>
+ <ul class="nav-links">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="about.html">Über Mich</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
+    <li><a href="about-website.html">About This Website</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="index.html" onclick="toggleNav()">Startseite</a>
+  <a href="about.html" onclick="toggleNav()">Über Mich</a>
+  <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+  <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
+  <a href="faq.html" onclick="toggleNav()">FAQ</a>
+  <a href="contact.html" onclick="toggleNav()" style="color: var(--gold-light);">Kontakt →</a>
+  <a href="about-website.html" onclick="toggleNav()">About This Website</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label page-hero-eyebrow reveal">Häufige Fragen</span>
+    <h1 class="page-hero-title reveal reveal-delay-1">Was Sie<br>wissen möchten</h1>
+    <p class="page-hero-sub reveal reveal-delay-2">Antworten auf die häufigsten Fragen rund um Architektur, Planung und Zusammenarbeit</p>
+  </div>
+</section>
+
+<section style="padding: 110px 0; background: var(--stone);">
+  <div class="container" style="max-width: 860px;">
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Was kostet ein erstes Beratungsgespräch?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Das erste Gespräch ist für Sie kostenlos und völlig unverbindlich. Ich möchte Ihr Vorhaben kennenlernen und Ihnen zeigen, wie ich Ihnen helfen kann — ohne versteckte Kosten.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          In welchem Bereich sind Sie tätig?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Mein Hauptwirkungsbereich ist Wien und Niederösterreich. Für größere Projekte bin ich auch darüber hinaus tätig — sprechen Sie mich einfach an.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Wie läuft ein Architekturprojekt typischerweise ab?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Ein Projekt beginnt mit einem unverbindlichen Erstgespräch, in dem wir Ihre Wünsche und Anforderungen besprechen. Danach folgen Entwurfsplanung, Einreichplanung bei der Baubehörde, Ausführungsplanung und — wenn gewünscht — die örtliche Bauaufsicht. Ich begleite Sie durch alle Phasen persönlich.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Wie lange dauert die Planungsphase?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Das hängt stark vom Umfang des Projekts ab. Ein Einfamilienhaus braucht typischerweise 4–8 Wochen für den Entwurf. Die Einreichplanung und Genehmigung durch die Behörde kann je nach Gemeinde mehrere Monate in Anspruch nehmen — das liegt nicht in meiner Hand, ich begleite Sie jedoch dabei so effizient wie möglich.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Übernehmen Sie auch die Behördenabwicklung?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Ja, ich übernehme die vollständige Einreichplanung und Abwicklung mit der Baubehörde. Sie müssen sich darum nicht selbst kümmern — ich kenne die Anforderungen und Abläufe und sorge dafür, dass alles reibungslos verläuft.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Planen Sie auch Umbauten und Sanierungen?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Ja, Sanierungen und Umbauten machen einen wichtigen Teil meiner Arbeit aus. Ich analysiere den Bestand, erarbeite konzeptionelle Lösungen und plane die Modernisierung so, dass Altes und Neues harmonisch zusammenpassen.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Wie werden Ihre Honorare berechnet?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Die Honorare richten sich nach dem Umfang der beauftragten Leistungen und dem Projektvolumen. In Österreich gibt es dafür Richtwerte der Bundeskammer der Architekten. Nach unserem ersten Gespräch erhalten Sie ein klares, transparentes Angebot — ohne böse Überraschungen.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 80px; text-align: center;" class="reveal">
+      <p style="font-size: 0.92rem; color: var(--ash); margin-bottom: 28px;">Noch eine Frage? Ich antworte persönlich.</p>
+      <a href="contact.html" class="btn-secondary"><span>Nachricht schreiben</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────────── -->
+<footer>
+  <span class="footer-credit">Website by Lennard Gaba</span>
+  <span class="footer-brand">© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span>
+  <div class="footer-links">
+    <a href="javascript:void(0)" onclick="openModal('impressum')">Impressum</a>
+    <a href="javascript:void(0)" onclick="openModal('datenschutz')">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
