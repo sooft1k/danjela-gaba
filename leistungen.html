@@ -1,156 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leistungen — Danjela Gaba Architektur</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="bilder/icon/favicon.png">
-  <link rel="stylesheet" href="shared.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leistungen — Danjela Gaba Architektur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="bilder/icon/favicon.png" />
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo"
+        >Danjela Gaba<span>Diplom-Ingenieurin · Architektur</span></a
+      >
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="leistungen.html" class="active">Leistungen</a></li>
+        <li><a href="about.html">Über Mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
+        <li><a href="about-website.html">About This Website</a></li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleNav()"
+        aria-label="Menü"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html" onclick="toggleNav()">Startseite</a>
+      <a href="about.html" onclick="toggleNav()">Über Mich</a>
+      <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+      <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
+      <a href="faq.html" onclick="toggleNav()">FAQ</a>
+      <a
+        href="contact.html"
+        onclick="toggleNav()"
+        style="color: var(--gold-light)"
+        >Kontakt →</a
+      >
+      <a href="about-website.html" onclick="toggleNav()">About This Website</a>
+    </div>
 
-<nav>
-  <a href="index.html" class="nav-logo">Danjela Gaba<span>Diplom-Ingenieurin · Architektur</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Startseite</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="leistungen.html" class="active">Leistungen</a></li>
-    <li><a href="about.html">Über Mich</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
-    <li><a href="about-website.html">About This Website</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
-</nav>
-<div id="mobile-nav" class="mobile-nav">
-  <a href="index.html" onclick="toggleNav()">Startseite</a>
-  <a href="about.html" onclick="toggleNav()">Über Mich</a>
-  <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
-  <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
-  <a href="faq.html" onclick="toggleNav()">FAQ</a>
-  <a href="contact.html" onclick="toggleNav()" style="color: var(--gold-light);">Kontakt →</a>
-  <a href="about-website.html" onclick="toggleNav()">About This Website</a>
-</div>
-
-<section class="page-hero">
-  <div class="container">
-    <span class="section-label page-hero-eyebrow reveal">Leistungen</span>
-    <h1 class="page-hero-title reveal reveal-delay-1">Alles aus<br>einer Hand</h1>
-    <p class="page-hero-sub reveal reveal-delay-2">Von der ersten Idee bis zur Schlüsselübergabe — Ihr Projekt in besten Händen</p>
-  </div>
-</section>
-
-<section style="padding: 80px 0; background: var(--white); border-bottom: 1px solid var(--stone-mid);">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;">
-      <div class="reveal">
-        <span class="section-label">Mein Ansatz</span>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label page-hero-eyebrow reveal">Leistungen</span>
+        <h1 class="page-hero-title reveal reveal-delay-1">
+          Alles aus<br />einer Hand
+        </h1>
+        <p class="page-hero-sub reveal reveal-delay-2">
+          Von der ersten Idee bis zur Schlüsselübergabe — Ihr Projekt in besten
+          Händen
+        </p>
       </div>
-      <p class="reveal reveal-delay-1" style="font-family: var(--font-serif); font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 300; line-height: 1.65; color: var(--ink);">
-        Als Architektin begleite ich Sie durch alle Phasen Ihres Bauvorhabens — mit dem Ziel, Ihre Vision in die Realität umzusetzen und dabei Funktionalität, Ästhetik und Wirtschaftlichkeit im Blick zu behalten.
+    </section>
+
+    <section
+      style="
+        padding: 80px 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--stone-mid);
+      "
+    >
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: start;
+          "
+        >
+          <div class="reveal">
+            <span class="section-label">Mein Ansatz</span>
+          </div>
+          <p
+            class="reveal reveal-delay-1"
+            style="
+              font-family: var(--font-serif);
+              font-size: clamp(1.3rem, 2vw, 1.75rem);
+              font-weight: 300;
+              line-height: 1.65;
+              color: var(--ink);
+            "
+          >
+            Als Architektin begleite ich Sie durch alle Phasen Ihres
+            Bauvorhabens — mit dem Ziel, Ihre Vision in die Realität umzusetzen
+            und dabei Funktionalität, Ästhetik und Wirtschaftlichkeit im Blick
+            zu behalten.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 110px 0; background: var(--stone)">
+      <div class="container">
+        <div class="leistungen-numbered">
+          <div class="leistung-row reveal">
+            <div class="leistung-num">01</div>
+            <div class="leistung-content">
+              <h3>Entwurfsplanung</h3>
+              <p>
+                Entwicklung individueller Konzepte und maßgeschneiderter
+                Lösungen für Ihr Bauvorhaben. Von der ersten Skizze bis zum
+                fertigen Entwurf — immer mit Ihren Wünschen und dem Budget im
+                Blick.
+              </p>
+              <ul class="leistung-tags">
+                <li>Bestandsaufnahme & Analyse</li>
+                <li>Konzeptentwicklung</li>
+                <li>3D-Visualisierungen</li>
+                <li>Grundrissplanung</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="leistung-row reveal">
+            <div class="leistung-num">02</div>
+            <div class="leistung-content">
+              <h3>Einreichplanung</h3>
+              <p>
+                Professionelle Erstellung aller erforderlichen Unterlagen für
+                die Baubehörde. Ich koordiniere das gesamte
+                Genehmigungsverfahren — Sie müssen sich um nichts kümmern.
+              </p>
+              <ul class="leistung-tags">
+                <li>Einreichpläne</li>
+                <li>Statische Berechnungen</li>
+                <li>Energieausweis</li>
+                <li>Behördenabwicklung</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="leistung-row reveal">
+            <div class="leistung-num">03</div>
+            <div class="leistung-content">
+              <h3>Ausführungsplanung</h3>
+              <p>
+                Detaillierte Werkpläne, Ausschreibungsunterlagen und Begleitung
+                der Vergabe an Handwerker und Unternehmen. Die Basis für eine
+                reibungslose Bauausführung.
+              </p>
+              <ul class="leistung-tags">
+                <li>Werkpläne & Details</li>
+                <li>Leistungsverzeichnisse</li>
+                <li>Ausschreibung</li>
+                <li>Vergabebegleitung</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="leistung-row reveal">
+            <div class="leistung-num">04</div>
+            <div class="leistung-content">
+              <h3>Sanierung &amp; Umbau</h3>
+              <p>
+                Behutsame Modernisierung bestehender Gebäude — mit Respekt vor
+                der Bausubstanz und dem Ziel, Altes und Neues harmonisch zu
+                verbinden.
+              </p>
+              <ul class="leistung-tags">
+                <li>Bestandsanalyse</li>
+                <li>Energetische Sanierung</li>
+                <li>Umbauplanung</li>
+                <li>Denkmalschutz</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="leistung-row reveal">
+            <div class="leistung-num">05</div>
+            <div class="leistung-content">
+              <h3>Örtliche Bauaufsicht</h3>
+              <p>
+                Ich begleite die Bauausführung vor Ort, kontrolliere die
+                Qualität der Arbeiten und koordiniere die beteiligten Gewerke —
+                für einen reibungslosen Bauablauf.
+              </p>
+              <ul class="leistung-tags">
+                <li>Qualitätskontrolle</li>
+                <li>Koordination der Gewerke</li>
+                <li>Mängelprotokoll</li>
+                <li>Abnahme</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <span class="section-label cta-label">Erstgespräch</span>
+      <h2>Kostenlos &amp;<br />unverbindlich</h2>
+      <p>
+        Sprechen Sie mit mir über Ihr Vorhaben — ich freue mich auf Ihre
+        Anfrage.
       </p>
-    </div>
-  </div>
-</section>
+      <a href="contact.html" class="btn-primary"><span>Jetzt anfragen</span></a>
+    </section>
 
-<section style="padding: 110px 0; background: var(--stone);">
-  <div class="container">
-    <div class="leistungen-numbered">
-
-      <div class="leistung-row reveal">
-        <div class="leistung-num">01</div>
-        <div class="leistung-content">
-          <h3>Entwurfsplanung</h3>
-          <p>Entwicklung individueller Konzepte und maßgeschneiderter Lösungen für Ihr Bauvorhaben. Von der ersten Skizze bis zum fertigen Entwurf — immer mit Ihren Wünschen und dem Budget im Blick.</p>
-          <ul class="leistung-tags">
-            <li>Bestandsaufnahme & Analyse</li>
-            <li>Konzeptentwicklung</li>
-            <li>3D-Visualisierungen</li>
-            <li>Grundrissplanung</li>
-          </ul>
-        </div>
+    <!-- ─── FOOTER ──────────────────────────────────────────── -->
+    <footer>
+      <span class="footer-credit">Website by Lennard Gaba</span>
+      <span class="footer-brand"
+        >© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span
+      >
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="openModal('impressum')"
+          >Impressum</a
+        >
+        <a href="javascript:void(0)" onclick="openModal('datenschutz')"
+          >Datenschutz</a
+        >
       </div>
+    </footer>
 
-      <div class="leistung-row reveal">
-        <div class="leistung-num">02</div>
-        <div class="leistung-content">
-          <h3>Einreichplanung</h3>
-          <p>Professionelle Erstellung aller erforderlichen Unterlagen für die Baubehörde. Ich koordiniere das gesamte Genehmigungsverfahren — Sie müssen sich um nichts kümmern.</p>
-          <ul class="leistung-tags">
-            <li>Einreichpläne</li>
-            <li>Statische Berechnungen</li>
-            <li>Energieausweis</li>
-            <li>Behördenabwicklung</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="leistung-row reveal">
-        <div class="leistung-num">03</div>
-        <div class="leistung-content">
-          <h3>Ausführungsplanung</h3>
-          <p>Detaillierte Werkpläne, Ausschreibungsunterlagen und Begleitung der Vergabe an Handwerker und Unternehmen. Die Basis für eine reibungslose Bauausführung.</p>
-          <ul class="leistung-tags">
-            <li>Werkpläne & Details</li>
-            <li>Leistungsverzeichnisse</li>
-            <li>Ausschreibung</li>
-            <li>Vergabebegleitung</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="leistung-row reveal">
-        <div class="leistung-num">04</div>
-        <div class="leistung-content">
-          <h3>Sanierung &amp; Umbau</h3>
-          <p>Behutsame Modernisierung bestehender Gebäude — mit Respekt vor der Bausubstanz und dem Ziel, Altes und Neues harmonisch zu verbinden.</p>
-          <ul class="leistung-tags">
-            <li>Bestandsanalyse</li>
-            <li>Energetische Sanierung</li>
-            <li>Umbauplanung</li>
-            <li>Denkmalschutz</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="leistung-row reveal">
-        <div class="leistung-num">05</div>
-        <div class="leistung-content">
-          <h3>Örtliche Bauaufsicht</h3>
-          <p>Ich begleite die Bauausführung vor Ort, kontrolliere die Qualität der Arbeiten und koordiniere die beteiligten Gewerke — für einen reibungslosen Bauablauf.</p>
-          <ul class="leistung-tags">
-            <li>Qualitätskontrolle</li>
-            <li>Koordination der Gewerke</li>
-            <li>Mängelprotokoll</li>
-            <li>Abnahme</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <span class="section-label cta-label">Erstgespräch</span>
-  <h2>Kostenlos &amp;<br>unverbindlich</h2>
-  <p>Sprechen Sie mit mir über Ihr Vorhaben — ich freue mich auf Ihre Anfrage.</p>
-  <a href="contact.html" class="btn-primary"><span>Jetzt anfragen</span></a>
-</section>
-
-<!-- ─── FOOTER ──────────────────────────────────────────── -->
-<footer>
-  <span class="footer-credit">Website by Lennard Gaba</span>
-  <span class="footer-brand">© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span>
-  <div class="footer-links">
-    <a href="javascript:void(0)" onclick="openModal('impressum')">Impressum</a>
-    <a href="javascript:void(0)" onclick="openModal('datenschutz')">Datenschutz</a>
-  </div>
-</footer>
-
-<script src="shared.js"></script>
-</body>
+    <script src="shared.js"></script>
+  </body>
 </html>

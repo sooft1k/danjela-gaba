@@ -1,256 +1,348 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danjela Gaba — Diplom-Ingenieurin für Architektur</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="bilder/icon/favicon.png">
-  <link rel="stylesheet" href="shared.css">
-</head>
-<body>
-
-<!-- ─── NAVIGATION ─────────────────────────────────────── -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    Danjela Gaba
-    <span>Diplom-Ingenieurin · Architektur</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Startseite</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="leistungen.html">Leistungen</a></li>
-    <li><a href="about.html">Über Mich</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
-    <li><a href="about-website.html">About This Website</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div id="mobile-nav" class="mobile-nav">
-  <a href="index.html" onclick="toggleNav()">Startseite</a>
-  <a href="about.html" onclick="toggleNav()">Über Mich</a>
-  <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
-  <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
-  <a href="faq.html" onclick="toggleNav()">FAQ</a>
-  <a href="contact.html" onclick="toggleNav()" style="color: var(--gold-light);">Kontakt →</a>
-  <a href="about-website.html" onclick="toggleNav()">About This Website</a>
-</div>
-
-<!-- ─── HERO ───────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-image">
-    <img src="bilder/gewerbeobjekte/vorne.JPEG" alt="Architektur von Danjela Gaba">
-    <span class="hero-image-caption">Büro & Lagerhalle · Traiskirchen</span>
-  </div>
-  <div class="hero-content">
-    <span class="hero-location">Wien &amp; Niederösterreich</span>
-    <span class="section-label hero-eyebrow reveal">Diplom-Ingenieurin für Architektur</span>
-    <h1 class="hero-h1 reveal reveal-delay-1">
-      Räume,<br>die <em>bleiben.</em>
-    </h1>
-    <p class="hero-desc reveal reveal-delay-2">
-      Individuelle Architektur für Wohn- und Gewerbebau —<br>
-      geplant mit Präzision, gestaltet mit Blick fürs Wesentliche.
-    </p>
-    <div class="hero-actions reveal reveal-delay-3">
-      <a href="portfolio.html" class="btn-primary"><span>Projekte ansehen</span></a>
-      <a href="contact.html" class="arrow-link" style="color: rgba(245,242,236,0.5);">Erstgespräch →</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-  </div>
-</section>
-
-<!-- ─── STATS STRIP ────────────────────────────────────── -->
-<section class="stats-strip">
-  <div class="container">
-    <div class="stats-inner">
-      <div class="stat-item reveal">
-        <div class="stat-num">15<em>+</em></div>
-        <div class="stat-label">Jahre Erfahrung</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Projektkategorien</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-2">
-        <div class="stat-num">1<em>:1</em></div>
-        <div class="stat-label">Persönliche Betreuung</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-3">
-        <div class="stat-num">0</div>
-        <div class="stat-label">Kompromisse beim Design</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PORTFOLIO ──────────────────────────────────────── -->
-<section class="portfolio-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div>
-        <span class="section-label">Portfolio</span>
-        <h2>Ausgewählte<br>Projekte</h2>
-      </div>
-      <a href="portfolio.html" class="btn-secondary"><span>Alle ansehen</span></a>
-    </div>
-  </div>
-
-  <div class="container">
-    <a href="einfamilienh%C3%A4user.html" class="proj-feature reveal">
-      <div class="proj-feature-img">
-        <img src="bilder/einfamilienh%C3%A4user/eingang.jpeg" alt="Einfamilienhäuser">
-        <div class="proj-feature-num">01</div>
-      </div>
-      <div class="proj-feature-info">
-        <span class="section-label">Wohnbau</span>
-        <h2>Einfamilienhäuser</h2>
-        <p>Individuelle Wohnhäuser in Leopoldsdorf — maßgeschneidert auf die Bedürfnisse der Bauherren, mit durchdachten Grundrissen und hochwertiger Materialwahl.</p>
-        <div class="proj-feature-meta">
-          <span>Leopoldsdorf</span>
-          <span>Einfamilienhaus</span>
-        </div>
-        <span class="arrow-link">Projekt ansehen →</span>
-      </div>
-    </a>
-
-    <div class="proj-pair" style="margin-top: 3px;">
-      <a href="wohnh%C3%A4user.html" class="proj-card reveal reveal-delay-1">
-        <img src="bilder/wohnh%C3%A4user/wohnhaus.jpeg" alt="Wohnhäuser">
-        <div class="proj-card-overlay">
-          <span class="proj-tag">Wien · Wohnbau · 2023</span>
-          <h3 class="proj-card-title">Moderne Wohnanlage</h3>
-        </div>
-        <div class="proj-arrow">↗</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danjela Gaba — Diplom-Ingenieurin für Architektur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="bilder/icon/favicon.png" />
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <!-- ─── NAVIGATION ─────────────────────────────────────── -->
+    <nav>
+      <a href="index.html" class="nav-logo">
+        Danjela Gaba
+        <span>Diplom-Ingenieurin · Architektur</span>
       </a>
-      <a href="gewerbeobjekte.html" class="proj-card reveal reveal-delay-2">
-        <img src="bilder/gewerbeobjekte/vorne.JPEG" alt="Gewerbeobjekte">
-        <div class="proj-card-overlay">
-          <span class="proj-tag">Traiskirchen · Gewerbe · 2008</span>
-          <h3 class="proj-card-title">Büro &amp; Lagerhalle</h3>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Startseite</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="about.html">Über Mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
+        <li><a href="about-website.html">About This Website</a></li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleNav()"
+        aria-label="Menü"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html" onclick="toggleNav()">Startseite</a>
+      <a href="about.html" onclick="toggleNav()">Über Mich</a>
+      <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+      <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
+      <a href="faq.html" onclick="toggleNav()">FAQ</a>
+      <a
+        href="contact.html"
+        onclick="toggleNav()"
+        style="color: var(--gold-light)"
+        >Kontakt →</a
+      >
+      <a href="about-website.html" onclick="toggleNav()">About This Website</a>
+    </div>
+
+    <!-- ─── HERO ───────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-image">
+        <img
+          src="bilder/gewerbeobjekte/vorne.JPEG"
+          alt="Architektur von Danjela Gaba"
+        />
+        <span class="hero-image-caption">Büro & Lagerhalle · Traiskirchen</span>
+      </div>
+      <div class="hero-content">
+        <span class="hero-location">Wien &amp; Niederösterreich</span>
+        <span class="section-label hero-eyebrow reveal"
+          >Diplom-Ingenieurin für Architektur</span
+        >
+        <h1 class="hero-h1 reveal reveal-delay-1">
+          Räume,<br />die <em>bleiben.</em>
+        </h1>
+        <p class="hero-desc reveal reveal-delay-2">
+          Individuelle Architektur für Wohn- und Gewerbebau —<br />
+          geplant mit Präzision, gestaltet mit Blick fürs Wesentliche.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="portfolio.html" class="btn-primary"
+            ><span>Projekte ansehen</span></a
+          >
+          <a
+            href="contact.html"
+            class="arrow-link"
+            style="color: rgba(245, 242, 236, 0.5)"
+            >Erstgespräch →</a
+          >
         </div>
-        <div class="proj-arrow">↗</div>
-      </a>
-    </div>
-  </div>
-</section>
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
 
-<!-- ─── PHILOSOPHY ─────────────────────────────────────── -->
-<section class="philosophy-section">
-  <div class="philosophy-visual">
-    <img src="bilder/einfamilienh%C3%A4user/garten.jpeg" alt="Architektur Detail">
-  </div>
-  <div class="philosophy-content">
-    <span class="section-label reveal">Philosophie</span>
-    <blockquote class="philosophy-quote reveal reveal-delay-1">
-      Gutes Bauen ist Präzision im Denken und Mut im Gestalten.
-    </blockquote>
-    <p class="philosophy-text reveal reveal-delay-2">
-      Architektur ist mehr als die Summe ihrer Pläne. Jedes Projekt beginnt mit einer Frage: Was brauchen die Menschen, die hier leben oder arbeiten werden? Mit über 15 Jahren Erfahrung begleite ich Bauvorhaben von der ersten Skizze bis zur Schlüsselübergabe.
-    </p>
-    <a href="about.html" class="btn-light reveal reveal-delay-3"><span>Mehr über mich</span></a>
-  </div>
-</section>
-
-<!-- ─── SERVICES ───────────────────────────────────────── -->
-<section class="services-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div>
-        <span class="section-label">Leistungen</span>
-        <h2>Alles aus<br>einer Hand</h2>
-      </div>
-      <a href="leistungen.html" class="btn-secondary"><span>Alle Leistungen</span></a>
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-num">01</div>
-        <h3>Entwurfsplanung</h3>
-        <p>Von der ersten Skizze bis zum fertigen Konzept — maßgeschneidert für Ihr Vorhaben.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">02</div>
-        <h3>Einreichplanung</h3>
-        <p>Alle Unterlagen für die Baubehörde — professionell vorbereitet und eingereicht.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">03</div>
-        <h3>Ausführungsplanung</h3>
-        <p>Detailpläne, Ausschreibung und Vergabebegleitung für reibungslose Umsetzung.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-num">04</div>
-        <h3>Sanierung &amp; Umbau</h3>
-        <p>Behutsame Modernisierung mit Respekt vor der bestehenden Bausubstanz.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── ABOUT TEASER ───────────────────────────────────── -->
-<section class="about-teaser">
-  <div class="container">
-    <div class="about-teaser-inner">
-      <div class="about-portrait reveal">
-        <img src="bilder/%C3%BCber%20mich/Profilbild.png" alt="Danjela Gaba — Architektin">
-        <div class="about-portrait-border"></div>
-      </div>
-      <div class="about-content">
-        <span class="section-label reveal">Über Mich</span>
-        <h2 class="about-name reveal reveal-delay-1">Danjela Gaba</h2>
-        <span class="about-role reveal reveal-delay-1">Diplom-Ingenieurin für Architektur</span>
-        <p class="reveal reveal-delay-2">Ich plane Wohn- und Gewerbebau in Wien und Niederösterreich — mit dem Anspruch, dass jedes Projekt seine Bauherren langfristig begeistert.</p>
-        <p class="reveal reveal-delay-2">Studium an der Polytechnischen Universität Tirana, Nostrifikation an der TU Wien. Seit über 15 Jahren tätig in der Region.</p>
-        <div class="about-details reveal reveal-delay-3">
-          <div class="detail-item">
-            <dt>Standort</dt>
-            <dd>Wiener Neudorf, NÖ</dd>
+    <!-- ─── STATS STRIP ────────────────────────────────────── -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat-item reveal">
+            <div class="stat-num">15<em>+</em></div>
+            <div class="stat-label">Jahre Erfahrung</div>
           </div>
-          <div class="detail-item">
-            <dt>Schwerpunkt</dt>
-            <dd>Wien, Niederösterreich, Burgenland</dd>
+          <div class="stat-item reveal reveal-delay-1">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Projektkategorien</div>
           </div>
-          <div class="detail-item">
-            <dt>Erstgespräch</dt>
-            <dd>Kostenlos &amp; unverbindlich</dd>
+          <div class="stat-item reveal reveal-delay-2">
+            <div class="stat-num">1<em>:1</em></div>
+            <div class="stat-label">Persönliche Betreuung</div>
           </div>
-          <div class="detail-item">
-            <dt>Telefon</dt>
-            <dd><a href="tel:+436766931597" style="transition:color .3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color=''">+43 676 693 1597</a></dd>
+          <div class="stat-item reveal reveal-delay-3">
+            <div class="stat-num">0</div>
+            <div class="stat-label">Kompromisse beim Design</div>
           </div>
         </div>
-        <a href="about.html" class="btn-secondary reveal reveal-delay-4"><span>Mehr erfahren</span></a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ─── CTA ────────────────────────────────────────────── -->
-<section class="cta-section">
-  <span class="section-label cta-label reveal">Ihr nächstes Projekt</span>
-  <h2 class="reveal reveal-delay-1">Lassen Sie uns<br>zusammenarbeiten</h2>
-  <p class="reveal reveal-delay-2">Das erste Gespräch ist kostenlos und unverbindlich.</p>
-  <a href="contact.html" class="btn-primary reveal reveal-delay-3"><span>Jetzt Kontakt aufnehmen</span></a>
-</section>
+    <!-- ─── PORTFOLIO ──────────────────────────────────────── -->
+    <section class="portfolio-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-label">Portfolio</span>
+            <h2>Ausgewählte<br />Projekte</h2>
+          </div>
+          <a href="portfolio.html" class="btn-secondary"
+            ><span>Alle ansehen</span></a
+          >
+        </div>
+      </div>
 
-<!-- ─── FOOTER ──────────────────────────────────────────── -->
-<footer>
-  <span class="footer-credit">Website by Lennard Gaba</span>
-  <span class="footer-brand">© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span>
-  <div class="footer-links">
-    <a href="javascript:void(0)" onclick="openModal('impressum')">Impressum</a>
-    <a href="javascript:void(0)" onclick="openModal('datenschutz')">Datenschutz</a>
-  </div>
-</footer>
+      <div class="container">
+        <a href="einfamilienh%C3%A4user.html" class="proj-feature reveal">
+          <div class="proj-feature-img">
+            <img
+              src="bilder/einfamilienh%C3%A4user/eingang.jpeg"
+              alt="Einfamilienhäuser"
+            />
+            <div class="proj-feature-num">01</div>
+          </div>
+          <div class="proj-feature-info">
+            <span class="section-label">Wohnbau</span>
+            <h2>Einfamilienhäuser</h2>
+            <p>
+              Individuelle Wohnhäuser in Leopoldsdorf — maßgeschneidert auf die
+              Bedürfnisse der Bauherren, mit durchdachten Grundrissen und
+              hochwertiger Materialwahl.
+            </p>
+            <div class="proj-feature-meta">
+              <span>Leopoldsdorf</span>
+              <span>Einfamilienhaus</span>
+            </div>
+            <span class="arrow-link">Projekt ansehen →</span>
+          </div>
+        </a>
 
-<script src="shared.js"></script>
-</body>
+        <div class="proj-pair" style="margin-top: 3px">
+          <a
+            href="wohnh%C3%A4user.html"
+            class="proj-card reveal reveal-delay-1"
+          >
+            <img src="bilder/wohnh%C3%A4user/wohnhaus.jpeg" alt="Wohnhäuser" />
+            <div class="proj-card-overlay">
+              <span class="proj-tag">Wien · Wohnbau · 2023</span>
+              <h3 class="proj-card-title">Moderne Wohnanlage</h3>
+            </div>
+            <div class="proj-arrow">↗</div>
+          </a>
+          <a href="gewerbeobjekte.html" class="proj-card reveal reveal-delay-2">
+            <img src="bilder/gewerbeobjekte/vorne.JPEG" alt="Gewerbeobjekte" />
+            <div class="proj-card-overlay">
+              <span class="proj-tag">Traiskirchen · Gewerbe · 2008</span>
+              <h3 class="proj-card-title">Büro &amp; Lagerhalle</h3>
+            </div>
+            <div class="proj-arrow">↗</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PHILOSOPHY ─────────────────────────────────────── -->
+    <section class="philosophy-section">
+      <div class="philosophy-visual">
+        <img
+          src="bilder/einfamilienh%C3%A4user/garten.jpeg"
+          alt="Architektur Detail"
+        />
+      </div>
+      <div class="philosophy-content">
+        <span class="section-label reveal">Philosophie</span>
+        <blockquote class="philosophy-quote reveal reveal-delay-1">
+          Gutes Bauen ist Präzision im Denken und Mut im Gestalten.
+        </blockquote>
+        <p class="philosophy-text reveal reveal-delay-2">
+          Architektur ist mehr als die Summe ihrer Pläne. Jedes Projekt beginnt
+          mit einer Frage: Was brauchen die Menschen, die hier leben oder
+          arbeiten werden? Mit über 15 Jahren Erfahrung begleite ich Bauvorhaben
+          von der ersten Skizze bis zur Schlüsselübergabe.
+        </p>
+        <a href="about.html" class="btn-light reveal reveal-delay-3"
+          ><span>Mehr über mich</span></a
+        >
+      </div>
+    </section>
+
+    <!-- ─── SERVICES ───────────────────────────────────────── -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-label">Leistungen</span>
+            <h2>Alles aus<br />einer Hand</h2>
+          </div>
+          <a href="leistungen.html" class="btn-secondary"
+            ><span>Alle Leistungen</span></a
+          >
+        </div>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-num">01</div>
+            <h3>Entwurfsplanung</h3>
+            <p>
+              Von der ersten Skizze bis zum fertigen Konzept — maßgeschneidert
+              für Ihr Vorhaben.
+            </p>
+          </div>
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-num">02</div>
+            <h3>Einreichplanung</h3>
+            <p>
+              Alle Unterlagen für die Baubehörde — professionell vorbereitet und
+              eingereicht.
+            </p>
+          </div>
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-num">03</div>
+            <h3>Ausführungsplanung</h3>
+            <p>
+              Detailpläne, Ausschreibung und Vergabebegleitung für reibungslose
+              Umsetzung.
+            </p>
+          </div>
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-num">04</div>
+            <h3>Sanierung &amp; Umbau</h3>
+            <p>
+              Behutsame Modernisierung mit Respekt vor der bestehenden
+              Bausubstanz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT TEASER ───────────────────────────────────── -->
+    <section class="about-teaser">
+      <div class="container">
+        <div class="about-teaser-inner">
+          <div class="about-portrait reveal">
+            <img
+              src="bilder/%C3%BCber%20mich/Profilbild.png"
+              alt="Danjela Gaba — Architektin"
+            />
+            <div class="about-portrait-border"></div>
+          </div>
+          <div class="about-content">
+            <span class="section-label reveal">Über Mich</span>
+            <h2 class="about-name reveal reveal-delay-1">Danjela Gaba</h2>
+            <span class="about-role reveal reveal-delay-1"
+              >Diplom-Ingenieurin für Architektur</span
+            >
+            <p class="reveal reveal-delay-2">
+              Ich plane Wohn- und Gewerbebau in Wien und Niederösterreich — mit
+              dem Anspruch, dass jedes Projekt seine Bauherren langfristig
+              begeistert.
+            </p>
+            <p class="reveal reveal-delay-2">
+              Studium an der Polytechnischen Universität Tirana, Nostrifikation
+              an der TU Wien. Seit über 15 Jahren tätig in der Region.
+            </p>
+            <div class="about-details reveal reveal-delay-3">
+              <div class="detail-item">
+                <dt>Standort</dt>
+                <dd>Wiener Neudorf, NÖ</dd>
+              </div>
+              <div class="detail-item">
+                <dt>Schwerpunkt</dt>
+                <dd>Wien, Niederösterreich, Burgenland</dd>
+              </div>
+              <div class="detail-item">
+                <dt>Erstgespräch</dt>
+                <dd>Kostenlos &amp; unverbindlich</dd>
+              </div>
+              <div class="detail-item">
+                <dt>Telefon</dt>
+                <dd>
+                  <a
+                    href="tel:+436766931597"
+                    style="transition: color 0.3s"
+                    onmouseover="this.style.color = 'var(--gold)'"
+                    onmouseout="this.style.color = ''"
+                    >+43 676 693 1597</a
+                  >
+                </dd>
+              </div>
+            </div>
+            <a href="about.html" class="btn-secondary reveal reveal-delay-4"
+              ><span>Mehr erfahren</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ────────────────────────────────────────────── -->
+    <section class="cta-section">
+      <span class="section-label cta-label reveal">Ihr nächstes Projekt</span>
+      <h2 class="reveal reveal-delay-1">
+        Lassen Sie uns<br />zusammenarbeiten
+      </h2>
+      <p class="reveal reveal-delay-2">
+        Das erste Gespräch ist kostenlos und unverbindlich.
+      </p>
+      <a href="contact.html" class="btn-primary reveal reveal-delay-3"
+        ><span>Jetzt Kontakt aufnehmen</span></a
+      >
+    </section>
+
+    <!-- ─── FOOTER ──────────────────────────────────────────── -->
+    <footer>
+      <span class="footer-credit">Website by Lennard Gaba</span>
+      <span class="footer-brand"
+        >© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span
+      >
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="openModal('impressum')"
+          >Impressum</a
+        >
+        <a href="javascript:void(0)" onclick="openModal('datenschutz')"
+          >Datenschutz</a
+        >
+      </div>
+    </footer>
+
+    <script src="shared.js"></script>
+  </body>
 </html>

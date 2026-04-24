@@ -3,8 +3,8 @@ function openModal(id) {
   const tryOpen = (attempts) => {
     const el = document.getElementById(id);
     if (el) {
-      document.documentElement.style.scrollBehavior = 'auto';
-      el.classList.add('open');
+      document.documentElement.style.scrollBehavior = "auto";
+      el.classList.add("open");
     } else if (attempts > 0) {
       setTimeout(() => tryOpen(attempts - 1), 100);
     }
@@ -13,62 +13,69 @@ function openModal(id) {
 }
 function closeModal(id) {
   const el = document.getElementById(id);
-  if (el) el.classList.remove('open');
-  document.documentElement.style.scrollBehavior = 'smooth';
+  if (el) el.classList.remove("open");
+  document.documentElement.style.scrollBehavior = "smooth";
 }
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document
+      .querySelectorAll(".modal.open")
+      .forEach((m) => m.classList.remove("open"));
   }
 });
 
 // ─── NAVIGATION SCROLL ────────────────────────────────
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+  if (nav) nav.classList.toggle("scrolled", window.scrollY > 40);
 });
 
 // ─── MOBILE NAV ───────────────────────────────────────
 function toggleNav() {
-  const btn = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
-  btn.classList.toggle('open');
-  if (mobileNav) mobileNav.classList.toggle('open');
-  document.body.style.overflow = btn.classList.contains('open') ? 'hidden' : '';
+  const btn = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobile-nav");
+  btn.classList.toggle("open");
+  if (mobileNav) mobileNav.classList.toggle("open");
+  document.body.style.overflow = btn.classList.contains("open") ? "hidden" : "";
 }
 
 // ─── FAQ ACCORDION ────────────────────────────────────
 function toggleFaq(el) {
-  const item = el.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => {
-    i.classList.remove('open');
-    i.querySelector('.faq-answer').style.maxHeight = '0';
+  const item = el.closest(".faq-item");
+  const isOpen = item.classList.contains("open");
+  document.querySelectorAll(".faq-item.open").forEach((i) => {
+    i.classList.remove("open");
+    i.querySelector(".faq-answer").style.maxHeight = "0";
   });
   if (!isOpen) {
-    item.classList.add('open');
-    const answer = item.querySelector('.faq-answer');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    item.classList.add("open");
+    const answer = item.querySelector(".faq-answer");
+    answer.style.maxHeight = answer.scrollHeight + "px";
   }
 }
 
 // ─── SCROLL REVEAL ────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          observer.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+  );
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 });
 
 // ─── LIGHTBOX ─────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', `
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
     <div class="lightbox-overlay" id="lightbox">
       <button class="lightbox-close" onclick="closeLightbox()">×</button>
       <button class="lightbox-prev" onclick="lightboxNav(-1)">‹</button>
@@ -76,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="lightbox-next" onclick="lightboxNav(1)">›</button>
       <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
-  `);
+  `,
+  );
   initLightbox();
 });
 
@@ -84,9 +92,11 @@ let lightboxImages = [];
 let lightboxIndex = 0;
 
 function initLightbox() {
-  const imgs = document.querySelectorAll('.proj-gallery img, .proj-detail-hero img');
+  const imgs = document.querySelectorAll(
+    ".proj-gallery img, .proj-detail-hero img",
+  );
   imgs.forEach((img, i) => {
-    img.addEventListener('click', () => openLightbox(imgs, i));
+    img.addEventListener("click", () => openLightbox(imgs, i));
   });
 }
 
@@ -94,81 +104,83 @@ function openLightbox(imgs, index) {
   lightboxImages = Array.from(imgs);
   lightboxIndex = index;
   showLightboxImage();
-  document.getElementById('lightbox').classList.add('open');
+  document.getElementById("lightbox").classList.add("open");
 }
 
 function showLightboxImage() {
   const img = lightboxImages[lightboxIndex];
-  document.getElementById('lightbox-img').src = img.src;
-  document.getElementById('lightbox-img').alt = img.alt;
+  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox-img").alt = img.alt;
   if (lightboxImages.length > 1) {
-    document.getElementById('lightbox-counter').textContent =
-      (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+    document.getElementById("lightbox-counter").textContent =
+      lightboxIndex + 1 + " / " + lightboxImages.length;
   }
 }
 
 function lightboxNav(dir) {
-  lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  lightboxIndex =
+    (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
   showLightboxImage();
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById("lightbox").classList.remove("open");
 }
 
-document.addEventListener('click', e => {
-  if (e.target.id === 'lightbox') closeLightbox();
+document.addEventListener("click", (e) => {
+  if (e.target.id === "lightbox") closeLightbox();
 });
 
-document.addEventListener('keydown', e => {
-  const lb = document.getElementById('lightbox');
-  if (!lb || !lb.classList.contains('open')) return;
-  if (e.key === 'ArrowRight') lightboxNav(1);
-  if (e.key === 'ArrowLeft') lightboxNav(-1);
-  if (e.key === 'Escape') closeLightbox();
+document.addEventListener("keydown", (e) => {
+  const lb = document.getElementById("lightbox");
+  if (!lb || !lb.classList.contains("open")) return;
+  if (e.key === "ArrowRight") lightboxNav(1);
+  if (e.key === "ArrowLeft") lightboxNav(-1);
+  if (e.key === "Escape") closeLightbox();
 });
 
 // ─── SMOOTH PAGE TRANSITIONS ──────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
     if (
       href &&
-      href.endsWith('.html') &&
-      !href.startsWith('http') &&
-      !link.getAttribute('onclick') &&
-      href !== '#'
+      href.endsWith(".html") &&
+      !href.startsWith("http") &&
+      !link.getAttribute("onclick") &&
+      href !== "#"
     ) {
-      link.addEventListener('click', e => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
-        document.body.classList.add('page-out');
-        setTimeout(() => { window.location.href = href; }, 280);
+        document.body.classList.add("page-out");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 280);
       });
     }
   });
 });
 
 // ─── SMOOTH SCROLL ────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if (href === '#') return;
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (href === "#") return;
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   });
 });
 
-
-
-
 // ─── MODALS direkt eingebettet ────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', `
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
     <div id="impressum" class="modal" onclick="if(event.target===this)closeModal('impressum')">
       <div class="modal-content">
         <button class="modal-close" onclick="closeModal('impressum')">&times;</button>
@@ -223,5 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>März 2026</p>
       </div>
     </div>
-  `);
+  `,
+  );
 });
