@@ -17,12 +17,9 @@
     <link rel="icon" type="image/png" href="bilder/icon/favicon.png" />
 
     <style>
-      /* ════════════════════════════════════════════════════════════════
-         DANJELA GABA ARCHITEKTUR — Premium Editorial Design System v3
-         Aesthetic: Luxury Editorial · Warm Black · Stone White · Gold
-         Inspiration: ArchDaily, Dezeen, Apple, Bjarke Ingels Group
-      ════════════════════════════════════════════════════════════════ */
-
+      /* ════════════════════════════════════════════════════════
+         DANJELA GABA ARCHITEKTUR — Premium Editorial v3
+      ════════════════════════════════════════════════════════ */
       *,
       *::before,
       *::after {
@@ -32,32 +29,21 @@
       }
 
       :root {
-        /* ── Colors ─────────────────────────────────────── */
         --ink: #0a0908;
         --ink-soft: #161412;
-        --ink-mid: #232019;
         --stone: #f5f2ec;
-        --stone-warm: #efeae0;
         --stone-mid: #e6e0d2;
         --stone-dark: #d6cfc0;
         --gold: #b89a5a;
         --gold-light: #d4b97a;
-        --gold-deep: #8d7641;
         --ash: #6e6a5f;
         --ash-light: #b0aa9f;
         --white: #fdfcf9;
-
-        /* ── Typography ─────────────────────────────────── */
         --font-serif: "Cormorant Garamond", Georgia, serif;
         --font-sans: "Outfit", system-ui, sans-serif;
-
-        /* ── Motion ─────────────────────────────────────── */
         --ease: cubic-bezier(0.22, 1, 0.36, 1);
         --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-        --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
         --ease-expo: cubic-bezier(0.87, 0, 0.13, 1);
-
-        /* ── Layout ─────────────────────────────────────── */
         --nav-h: 84px;
         --container: 1360px;
         --gutter: 60px;
@@ -70,7 +56,6 @@
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
       }
-
       body {
         font-family: var(--font-sans);
         background: var(--stone);
@@ -78,9 +63,7 @@
         font-weight: 300;
         line-height: 1.7;
         overflow-x: hidden;
-        -webkit-text-size-adjust: 100%;
       }
-
       a {
         text-decoration: none;
         color: inherit;
@@ -93,14 +76,10 @@
         font-family: inherit;
         cursor: pointer;
       }
-
-      /* ─── Selection ──────────────────────────────────── */
       ::selection {
         background: var(--gold);
         color: var(--ink);
       }
-
-      /* ─── Scrollbar ──────────────────────────────────── */
       ::-webkit-scrollbar {
         width: 10px;
       }
@@ -116,72 +95,7 @@
         background: var(--gold);
       }
 
-      /* ─── Cursor (desktop only) ──────────────────────── */
-      .cursor {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        background: var(--ink);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.3s var(--ease),
-          height 0.3s var(--ease),
-          background 0.3s,
-          opacity 0.3s,
-          mix-blend-mode 0.3s;
-        opacity: 0;
-        mix-blend-mode: difference;
-        background: var(--stone);
-      }
-      .cursor-ring {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 36px;
-        height: 36px;
-        border: 1px solid rgba(184, 154, 90, 0.6);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.4s var(--ease),
-          height 0.4s var(--ease),
-          border-color 0.3s,
-          opacity 0.3s;
-        opacity: 0;
-      }
-      body.has-cursor .cursor,
-      body.has-cursor .cursor-ring {
-        opacity: 1;
-      }
-      body.cursor-hover .cursor {
-        width: 0;
-        height: 0;
-      }
-      body.cursor-hover .cursor-ring {
-        width: 60px;
-        height: 60px;
-        border-color: var(--gold);
-      }
-      body.cursor-text .cursor {
-        width: 4px;
-        height: 22px;
-        border-radius: 1px;
-      }
-      @media (hover: none), (max-width: 900px) {
-        .cursor,
-        .cursor-ring {
-          display: none !important;
-        }
-      }
-
-      /* ─── Page Loader ────────────────────────────────── */
+      /* ─── Page Loader ──────────────────────────────────── */
       .loader {
         position: fixed;
         inset: 0;
@@ -206,7 +120,7 @@
         color: var(--white);
         font-weight: 300;
         opacity: 0;
-        animation: loaderFade 1.4s var(--ease) forwards;
+        animation: loaderFade 1.2s var(--ease) forwards;
       }
       .loader-mark em {
         font-style: italic;
@@ -225,7 +139,7 @@
         inset: 0;
         background: var(--gold);
         transform-origin: left;
-        animation: loaderBar 1.6s var(--ease-out) forwards;
+        animation: loaderBar 1.4s var(--ease-out) forwards;
       }
       @keyframes loaderFade {
         from {
@@ -246,7 +160,7 @@
         }
       }
 
-      /* ─── Reveal Base ────────────────────────────────── */
+      /* ─── Reveal ───────────────────────────────────────── */
       .reveal {
         opacity: 0;
         transform: translateY(36px);
@@ -270,27 +184,7 @@
       .reveal-delay-4 {
         transition-delay: 0.38s;
       }
-      .reveal-delay-5 {
-        transition-delay: 0.48s;
-      }
 
-      /* mask reveal for headlines */
-      .mask-reveal {
-        display: inline-block;
-        overflow: hidden;
-        vertical-align: top;
-      }
-      .mask-reveal > span {
-        display: inline-block;
-        transform: translateY(110%);
-        transition: transform 1.1s var(--ease-out);
-      }
-      .visible .mask-reveal > span,
-      .mask-reveal.visible > span {
-        transform: translateY(0);
-      }
-
-      /* image reveal */
       .img-reveal {
         position: relative;
         overflow: hidden;
@@ -303,6 +197,8 @@
         transform-origin: right;
         transform: scaleX(1);
         transition: transform 1.2s var(--ease-expo);
+        pointer-events: none;
+        z-index: 3;
       }
       .img-reveal.visible::after {
         transform: scaleX(0);
@@ -315,16 +211,15 @@
         transform: scale(1);
       }
 
-      /* ─── Container ──────────────────────────────────── */
       .container {
         max-width: var(--container);
         margin: 0 auto;
         padding: 0 var(--gutter);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          NAVIGATION
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       nav.main-nav {
         position: fixed;
         top: 0;
@@ -362,7 +257,6 @@
         letter-spacing: 0.01em;
         color: var(--ink);
         line-height: 1.15;
-        position: relative;
       }
       .nav-logo span {
         display: block;
@@ -424,7 +318,6 @@
         border-color: var(--gold);
       }
 
-      /* Hamburger */
       .hamburger {
         display: none;
         flex-direction: column;
@@ -476,7 +369,7 @@
       }
       .mobile-nav a {
         font-family: var(--font-serif);
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         font-weight: 300;
         color: rgba(245, 242, 236, 0.7);
         line-height: 1.3;
@@ -523,9 +416,37 @@
         padding-left: 14px;
       }
 
-      /* ════════════════════════════════════════════════════
-         SECTION LABELS / EYEBROWS
-      ════════════════════════════════════════════════════ */
+      /* ════════════════════════════════════════════════════════
+         PAGE ROUTER — Pages hidden until activated
+      ════════════════════════════════════════════════════════ */
+      .page {
+        display: none;
+        animation: pageFadeIn 0.6s var(--ease);
+      }
+      .page.active {
+        display: block;
+      }
+      @keyframes pageFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      body.page-transitioning {
+        pointer-events: none;
+      }
+      body.page-transitioning #page-container {
+        opacity: 0;
+        transition: opacity 0.25s var(--ease);
+      }
+
+      /* ════════════════════════════════════════════════════════
+         SECTION LABELS
+      ════════════════════════════════════════════════════════ */
       .section-label {
         font-size: 0.72rem;
         letter-spacing: 0.32em;
@@ -544,16 +465,12 @@
         background: var(--gold);
         opacity: 0.6;
       }
-      .section-label.no-rule::before {
-        display: none;
-      }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          BUTTONS
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .btn-primary,
       .btn-secondary,
-      .btn-ghost,
       .btn-light {
         display: inline-flex;
         align-items: center;
@@ -573,7 +490,6 @@
       }
       .btn-primary::before,
       .btn-secondary::before,
-      .btn-ghost::before,
       .btn-light::before {
         content: "";
         position: absolute;
@@ -610,21 +526,6 @@
         transform: translateX(0);
       }
 
-      .btn-ghost {
-        border-color: rgba(245, 242, 236, 0.22);
-        color: rgba(245, 242, 236, 0.7);
-      }
-      .btn-ghost::before {
-        background: rgba(245, 242, 236, 0.1);
-      }
-      .btn-ghost:hover {
-        color: var(--white);
-        border-color: rgba(245, 242, 236, 0.5);
-      }
-      .btn-ghost:hover::before {
-        transform: translateX(0);
-      }
-
       .btn-light {
         border-color: rgba(245, 242, 236, 0.3);
         color: var(--stone);
@@ -641,7 +542,6 @@
 
       .btn-primary span,
       .btn-secondary span,
-      .btn-ghost span,
       .btn-light span {
         position: relative;
         z-index: 1;
@@ -651,7 +551,6 @@
       }
       .btn-primary span::after,
       .btn-secondary span::after,
-      .btn-ghost span::after,
       .btn-light span::after {
         content: "→";
         font-size: 1em;
@@ -659,18 +558,15 @@
       }
       .btn-primary:hover span::after,
       .btn-secondary:hover span::after,
-      .btn-ghost:hover span::after,
       .btn-light:hover span::after {
         transform: translateX(6px);
       }
       .btn-primary:hover,
       .btn-secondary:hover,
-      .btn-ghost:hover,
       .btn-light:hover {
         transform: translateY(-2px);
       }
 
-      /* Arrow link */
       .arrow-link {
         display: inline-flex;
         align-items: center;
@@ -700,9 +596,9 @@
         width: 36px;
       }
 
-      /* ════════════════════════════════════════════════════
-         INDEX HERO — Cinematic
-      ════════════════════════════════════════════════════ */
+      /* ════════════════════════════════════════════════════════
+         INDEX HERO
+      ════════════════════════════════════════════════════════ */
       .hero {
         height: 100vh;
         min-height: 760px;
@@ -721,7 +617,7 @@
         inset: 0;
         background: linear-gradient(
           135deg,
-          rgba(10, 9, 8, 0.25) 0%,
+          rgba(10, 9, 8, 0.25),
           rgba(10, 9, 8, 0) 40%,
           rgba(10, 9, 8, 0.15) 100%
         );
@@ -734,7 +630,6 @@
         object-fit: cover;
         filter: brightness(0.92) contrast(1.05);
         animation: heroSlowZoom 22s ease-in-out infinite alternate;
-        will-change: transform;
       }
       @keyframes heroSlowZoom {
         from {
@@ -881,7 +776,7 @@
         right: 0;
         height: 100%;
         background: linear-gradient(to bottom, transparent, var(--gold));
-        animation: scrollRun 2.4s var(--ease-in-out) infinite;
+        animation: scrollRun 2.4s ease-in-out infinite;
       }
       @keyframes scrollRun {
         0% {
@@ -892,9 +787,9 @@
         }
       }
 
-      /* ════════════════════════════════════════════════════
-         MARQUEE STRIP
-      ════════════════════════════════════════════════════ */
+      /* ════════════════════════════════════════════════════════
+         MARQUEE
+      ════════════════════════════════════════════════════════ */
       .marquee {
         background: var(--ink);
         padding: 28px 0;
@@ -933,9 +828,9 @@
         }
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          STATS
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .stats-strip {
         background: var(--ink-soft);
         padding: 72px 0;
@@ -965,7 +860,6 @@
         padding: 8px 48px;
         border-right: 1px solid rgba(255, 255, 255, 0.06);
         text-align: center;
-        position: relative;
       }
       .stat-item:last-child {
         border-right: none;
@@ -993,9 +887,9 @@
         font-weight: 400;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          SECTION HEADER
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .section-header {
         display: flex;
         align-items: flex-end;
@@ -1014,14 +908,13 @@
         letter-spacing: -0.02em;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          PORTFOLIO
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .portfolio-section {
         padding: 140px 0 130px;
         background: var(--stone);
       }
-
       .proj-feature {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -1069,14 +962,12 @@
         z-index: 2;
         letter-spacing: -0.02em;
       }
-
       .proj-feature-info {
         padding: 64px 56px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         background: var(--white);
-        position: relative;
       }
       .proj-feature-info .section-label {
         margin-bottom: 26px;
@@ -1205,9 +1096,9 @@
         color: var(--gold);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          PHILOSOPHY
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .philosophy-section {
         padding: 0;
         background: var(--ink);
@@ -1226,7 +1117,6 @@
         object-fit: cover;
         filter: brightness(0.45) saturate(0.5) contrast(1.1);
         transition: transform 1.4s var(--ease-out);
-        will-change: transform;
       }
       .philosophy-section:hover .philosophy-visual img {
         transform: scale(1.04);
@@ -1263,9 +1153,9 @@
         max-width: 440px;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          SERVICES
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .services-section {
         padding: 140px 0 130px;
         background: var(--stone);
@@ -1285,7 +1175,6 @@
           transform 0.45s var(--ease);
         position: relative;
         overflow: hidden;
-        cursor: default;
       }
       .service-card::before {
         content: "";
@@ -1334,9 +1223,9 @@
         line-height: 1.85;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          ABOUT TEASER
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .about-teaser {
         padding: 140px 0;
         background: var(--white);
@@ -1445,9 +1334,9 @@
         color: var(--gold);
       }
 
-      /* ════════════════════════════════════════════════════
-         PAGE HERO (inner sections)
-      ════════════════════════════════════════════════════ */
+      /* ════════════════════════════════════════════════════════
+         PAGE HERO (inner pages)
+      ════════════════════════════════════════════════════════ */
       .page-hero {
         padding: calc(var(--nav-h) + 120px) 0 110px;
         background: var(--ink);
@@ -1508,9 +1397,9 @@
         line-height: 1.85;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          LEISTUNGEN
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .approach-block {
         padding: 100px 0;
         background: var(--white);
@@ -1530,7 +1419,6 @@
         color: var(--ink);
         letter-spacing: -0.005em;
       }
-
       .leistungen-section {
         padding: 130px 0;
         background: var(--stone);
@@ -1546,7 +1434,6 @@
         border-bottom: 1px solid var(--stone-mid);
         align-items: start;
         position: relative;
-        transition: background 0.4s;
       }
       .leistung-row::before {
         content: "";
@@ -1625,14 +1512,15 @@
         transform: translateY(-2px);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          PROJECT DETAIL
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .proj-detail-hero {
         position: relative;
         height: 86vh;
         min-height: 620px;
         overflow: hidden;
+        margin-top: var(--nav-h);
       }
       .proj-detail-hero img {
         width: 100%;
@@ -1697,7 +1585,7 @@
       }
       .proj-detail-sidebar {
         position: sticky;
-        top: 110px;
+        top: calc(var(--nav-h) + 24px);
       }
       .proj-info-block {
         background: var(--white);
@@ -1747,32 +1635,9 @@
         aspect-ratio: 16/7;
       }
 
-      /* sub-section project headers */
-      .sub-section {
-        padding: 0;
-        background: var(--stone);
-        scroll-margin-top: var(--nav-h);
-      }
-      .sub-section-divider {
-        padding: 120px 0 60px;
-        background: var(--stone);
-        text-align: center;
-      }
-      .sub-section-divider .section-label {
-        margin-bottom: 16px;
-        justify-content: center;
-      }
-      .sub-section-divider h2 {
-        font-family: var(--font-serif);
-        font-size: clamp(2.2rem, 3.6vw, 3.6rem);
-        font-weight: 300;
-        line-height: 1;
-        letter-spacing: -0.02em;
-      }
-
-      /* ════════════════════════════════════════════════════
-         ABOUT (full)
-      ════════════════════════════════════════════════════ */
+      /* ════════════════════════════════════════════════════════
+         ABOUT
+      ════════════════════════════════════════════════════════ */
       .about-section {
         padding: 130px 0;
         background: var(--stone);
@@ -1785,7 +1650,7 @@
       }
       .about-sidebar {
         position: sticky;
-        top: 110px;
+        top: calc(var(--nav-h) + 24px);
       }
       .portrait-wrap {
         overflow: hidden;
@@ -1830,7 +1695,6 @@
       .meta-item a:hover {
         color: var(--gold);
       }
-
       .about-name-large {
         font-family: var(--font-serif);
         font-size: clamp(3rem, 5vw, 5.4rem);
@@ -1929,9 +1793,9 @@
         flex-shrink: 0;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          FAQ
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .faq-section {
         padding: 130px 0;
         background: var(--stone);
@@ -1993,9 +1857,9 @@
         max-width: 720px;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          CONTACT
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .contact-section {
         padding: 130px 0;
         background: var(--stone);
@@ -2157,9 +2021,9 @@
         transform: translateY(-2px);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          ABOUT WEBSITE
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .aw-hero {
         background: var(--ink);
         padding: calc(var(--nav-h) + 120px) 0 110px;
@@ -2203,8 +2067,8 @@
         color: var(--ash-light);
         font-size: 1rem;
         line-height: 1.85;
+        position: relative;
       }
-
       .aw-section {
         padding: 100px 0;
         border-bottom: 1px solid var(--stone-mid);
@@ -2287,7 +2151,6 @@
       .aw-list li:hover::before {
         transform: scale(1.5);
       }
-
       .aw-cta-section {
         background: var(--ink);
         padding: 110px 0;
@@ -2365,9 +2228,9 @@
         transform: translateY(-3px);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          CTA SECTION
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .cta-section {
         padding: 180px 0;
         background: var(--ink);
@@ -2422,9 +2285,9 @@
         margin-bottom: 60px;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          FOOTER
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       footer {
         background: #060604;
         padding: 64px var(--gutter) 40px;
@@ -2449,13 +2312,6 @@
         text-align: center;
         margin-bottom: 28px;
         width: 100%;
-      }
-      .footer-credit a {
-        color: rgba(184, 154, 90, 0.5);
-        transition: color 0.3s;
-      }
-      .footer-credit a:hover {
-        color: var(--gold);
       }
       .footer-brand {
         font-family: var(--font-serif);
@@ -2492,9 +2348,9 @@
         width: 100%;
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          MODALS
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .modal {
         display: none;
         position: fixed;
@@ -2599,9 +2455,9 @@
         transform: rotate(90deg);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          LIGHTBOX
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       .lightbox-overlay {
         display: none;
         position: fixed;
@@ -2687,9 +2543,9 @@
         color: rgba(245, 242, 236, 0.4);
       }
 
-      /* ════════════════════════════════════════════════════
+      /* ════════════════════════════════════════════════════════
          RESPONSIVE
-      ════════════════════════════════════════════════════ */
+      ════════════════════════════════════════════════════════ */
       @media (max-width: 1100px) {
         .hero {
           grid-template-columns: 1fr;
@@ -2748,7 +2604,6 @@
           gap: 32px;
         }
       }
-
       @media (max-width: 900px) {
         :root {
           --gutter: 32px;
@@ -2790,9 +2645,6 @@
         footer {
           padding: 44px 32px;
         }
-        .mobile-nav a {
-          font-size: 2.4rem;
-        }
         .leistung-row {
           grid-template-columns: 1fr;
           gap: 16px;
@@ -2823,7 +2675,6 @@
           gap: 60px;
         }
       }
-
       @media (max-width: 600px) {
         :root {
           --gutter: 22px;
@@ -2904,10 +2755,6 @@
           gap: 44px;
         }
       }
-
-      /* ════════════════════════════════════════════════════
-         REDUCED MOTION
-      ════════════════════════════════════════════════════ */
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -2924,46 +2771,34 @@
           transform: scale(1);
         }
       }
-
-      /* page transition */
-      body.page-out {
-        opacity: 0;
-        transition: opacity 0.3s var(--ease);
-      }
     </style>
   </head>
   <body>
-    <!-- ─── PAGE LOADER ──────────────────────────────────── -->
+    <!-- Loader -->
     <div class="loader" id="loader">
       <div class="loader-mark">Danjela Gaba <em>Architektur</em></div>
       <div class="loader-bar"></div>
     </div>
 
-    <!-- ─── CUSTOM CURSOR ────────────────────────────────── -->
-    <div class="cursor"></div>
-    <div class="cursor-ring"></div>
-
-    <!-- ════════════════════════════════════════════════════
+    <!-- ════════════════════════════════════════════════════════
          NAVIGATION
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════════ -->
     <nav class="main-nav">
-      <a href="#startseite" class="nav-logo" data-link>
+      <a href="#startseite" class="nav-logo" data-route="startseite">
         Danjela Gaba
         <span>Diplom-Ingenieurin · Architektur</span>
       </a>
       <ul class="nav-links">
+        <li><a href="#startseite" data-route="startseite">Startseite</a></li>
+        <li><a href="#portfolio" data-route="portfolio">Portfolio</a></li>
+        <li><a href="#leistungen" data-route="leistungen">Leistungen</a></li>
+        <li><a href="#about" data-route="about">Über Mich</a></li>
+        <li><a href="#faq" data-route="faq">FAQ</a></li>
         <li>
-          <a href="#startseite" class="nav-item active" data-link>Startseite</a>
-        </li>
-        <li><a href="#portfolio" class="nav-item" data-link>Portfolio</a></li>
-        <li><a href="#leistungen" class="nav-item" data-link>Leistungen</a></li>
-        <li><a href="#about" class="nav-item" data-link>Über Mich</a></li>
-        <li><a href="#faq" class="nav-item" data-link>FAQ</a></li>
-        <li>
-          <a href="#contact" class="nav-item nav-cta" data-link>Kontakt</a>
+          <a href="#contact" data-route="contact" class="nav-cta">Kontakt</a>
         </li>
         <li>
-          <a href="#about-website" class="nav-item" data-link
+          <a href="#about-website" data-route="about-website"
             >About This Website</a
           >
         </li>
@@ -2979,305 +2814,433 @@
     </nav>
 
     <div id="mobile-nav" class="mobile-nav">
-      <a href="#startseite" onclick="closeMobileNav()" data-link>Startseite</a>
-      <a href="#about" onclick="closeMobileNav()" data-link>Über Mich</a>
-      <a href="#portfolio" onclick="closeMobileNav()" data-link>Portfolio</a>
-      <a href="#leistungen" onclick="closeMobileNav()" data-link>Leistungen</a>
-      <a href="#faq" onclick="closeMobileNav()" data-link>FAQ</a>
-      <a
-        href="#contact"
-        onclick="closeMobileNav()"
-        style="color: var(--gold-light)"
-        data-link
+      <a href="#startseite" data-route="startseite">Startseite</a>
+      <a href="#about" data-route="about">Über Mich</a>
+      <a href="#portfolio" data-route="portfolio">Portfolio</a>
+      <a href="#leistungen" data-route="leistungen">Leistungen</a>
+      <a href="#faq" data-route="faq">FAQ</a>
+      <a href="#contact" data-route="contact" style="color: var(--gold-light)"
         >Kontakt →</a
       >
-      <a href="#about-website" onclick="closeMobileNav()" data-link
-        >About This Website</a
-      >
+      <a href="#about-website" data-route="about-website">About This Website</a>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         STARTSEITE
-    ════════════════════════════════════════════════════ -->
-    <section id="startseite">
-      <!-- HERO -->
-      <div class="hero">
-        <div class="hero-image">
-          <img
-            src="bilder/gewerbeobjekte/vorne.JPEG"
-            alt="Architektur von Danjela Gaba"
-          />
-          <span class="hero-image-caption"
-            >Büro & Lagerhalle · Traiskirchen</span
-          >
-        </div>
-        <div class="hero-content">
-          <span class="hero-location">Wien &amp; Niederösterreich</span>
-          <span class="section-label hero-eyebrow"
-            >Diplom-Ingenieurin für Architektur</span
-          >
-          <h1 class="hero-h1">Räume,<br />die <em>bleiben.</em></h1>
-          <p class="hero-desc">
-            Individuelle Architektur für Wohn- und Gewerbebau —<br />
-            geplant mit Präzision, gestaltet mit Blick fürs Wesentliche.
-          </p>
-          <div class="hero-actions">
-            <a href="#portfolio" class="btn-primary" data-link
-              ><span>Projekte ansehen</span></a
+    <!-- ════════════════════════════════════════════════════════
+         PAGE CONTAINER — Pages get swapped here
+    ════════════════════════════════════════════════════════ -->
+    <main id="page-container">
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: STARTSEITE
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="startseite">
+        <section class="hero">
+          <div class="hero-image">
+            <img
+              src="bilder/gewerbeobjekte/vorne.JPEG"
+              alt="Architektur von Danjela Gaba"
+            />
+            <span class="hero-image-caption"
+              >Büro & Lagerhalle · Traiskirchen</span
             >
-            <a href="#contact" class="arrow-link" data-link>Erstgespräch</a>
           </div>
-        </div>
-        <div class="hero-scroll">
-          <span class="hero-scroll-text">Scroll</span>
-          <div class="hero-scroll-line"></div>
-        </div>
-      </div>
-
-      <!-- MARQUEE -->
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>Wohnbau</span>
-          <span>Gewerbebau</span>
-          <span>Sanierung</span>
-          <span>Einreichplanung</span>
-          <span>Bauaufsicht</span>
-          <span>Innenarchitektur</span>
-          <span>Wohnbau</span>
-          <span>Gewerbebau</span>
-          <span>Sanierung</span>
-          <span>Einreichplanung</span>
-          <span>Bauaufsicht</span>
-          <span>Innenarchitektur</span>
-        </div>
-      </div>
-
-      <!-- STATS -->
-      <section class="stats-strip">
-        <div class="container">
-          <div class="stats-inner">
-            <div class="stat-item reveal">
-              <div class="stat-num">15<em>+</em></div>
-              <div class="stat-label">Jahre Erfahrung</div>
-            </div>
-            <div class="stat-item reveal reveal-delay-1">
-              <div class="stat-num">3</div>
-              <div class="stat-label">Projektkategorien</div>
-            </div>
-            <div class="stat-item reveal reveal-delay-2">
-              <div class="stat-num">1<em>:1</em></div>
-              <div class="stat-label">Persönliche Betreuung</div>
-            </div>
-            <div class="stat-item reveal reveal-delay-3">
-              <div class="stat-num">0</div>
-              <div class="stat-label">Kompromisse beim Design</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PHILOSOPHY -->
-      <section class="philosophy-section">
-        <div class="philosophy-visual img-reveal reveal">
-          <img
-            src="bilder/einfamilienh%C3%A4user/garten.jpeg"
-            alt="Architektur Detail"
-          />
-        </div>
-        <div class="philosophy-content">
-          <span class="section-label reveal">Philosophie</span>
-          <blockquote class="philosophy-quote reveal reveal-delay-1">
-            Gutes Bauen ist Präzision im Denken und Mut im Gestalten.
-          </blockquote>
-          <p class="philosophy-text reveal reveal-delay-2">
-            Architektur ist mehr als die Summe ihrer Pläne. Jedes Projekt
-            beginnt mit einer Frage: Was brauchen die Menschen, die hier leben
-            oder arbeiten werden? Mit über 15 Jahren Erfahrung begleite ich
-            Bauvorhaben von der ersten Skizze bis zur Schlüsselübergabe.
-          </p>
-          <a href="#about" class="btn-light reveal reveal-delay-3" data-link
-            ><span>Mehr über mich</span></a
-          >
-        </div>
-      </section>
-
-      <!-- ABOUT TEASER -->
-      <section class="about-teaser">
-        <div class="container">
-          <div class="about-teaser-inner">
-            <div class="about-portrait reveal img-reveal">
-              <img
-                src="bilder/%C3%BCber%20mich/Profilbild.png"
-                alt="Danjela Gaba — Architektin"
-              />
-              <div class="about-portrait-border"></div>
-            </div>
-            <div class="about-content">
-              <span class="section-label reveal">Über Mich</span>
-              <h2 class="about-name reveal reveal-delay-1">Danjela Gaba</h2>
-              <span class="about-role reveal reveal-delay-1"
-                >Diplom-Ingenieurin für Architektur</span
+          <div class="hero-content">
+            <span class="hero-location">Wien &amp; Niederösterreich</span>
+            <span class="section-label hero-eyebrow"
+              >Diplom-Ingenieurin für Architektur</span
+            >
+            <h1 class="hero-h1">Räume,<br />die <em>bleiben.</em></h1>
+            <p class="hero-desc">
+              Individuelle Architektur für Wohn- und Gewerbebau —<br />
+              geplant mit Präzision, gestaltet mit Blick fürs Wesentliche.
+            </p>
+            <div class="hero-actions">
+              <a href="#portfolio" data-route="portfolio" class="btn-primary"
+                ><span>Projekte ansehen</span></a
               >
-              <p class="reveal reveal-delay-2">
-                Ich plane Wohn- und Gewerbebau in Wien und Niederösterreich —
-                mit dem Anspruch, dass jedes Projekt seine Bauherren langfristig
-                begeistert.
-              </p>
-              <p class="reveal reveal-delay-2">
-                Studium an der Polytechnischen Universität Tirana,
-                Nostrifikation an der TU Wien. Seit über 15 Jahren tätig in der
-                Region.
-              </p>
-              <div class="about-details reveal reveal-delay-3">
-                <div class="detail-item">
-                  <dt>Standort</dt>
-                  <dd>Wiener Neudorf, NÖ</dd>
+              <a href="#contact" data-route="contact" class="arrow-link"
+                >Erstgespräch</a
+              >
+            </div>
+          </div>
+          <div class="hero-scroll">
+            <span class="hero-scroll-text">Scroll</span>
+            <div class="hero-scroll-line"></div>
+          </div>
+        </section>
+
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Wohnbau</span><span>Gewerbebau</span><span>Sanierung</span>
+            <span>Einreichplanung</span><span>Bauaufsicht</span
+            ><span>Innenarchitektur</span> <span>Wohnbau</span
+            ><span>Gewerbebau</span><span>Sanierung</span>
+            <span>Einreichplanung</span><span>Bauaufsicht</span
+            ><span>Innenarchitektur</span>
+          </div>
+        </div>
+
+        <section class="stats-strip">
+          <div class="container">
+            <div class="stats-inner">
+              <div class="stat-item reveal">
+                <div class="stat-num">15<em>+</em></div>
+                <div class="stat-label">Jahre Erfahrung</div>
+              </div>
+              <div class="stat-item reveal reveal-delay-1">
+                <div class="stat-num">3</div>
+                <div class="stat-label">Projektkategorien</div>
+              </div>
+              <div class="stat-item reveal reveal-delay-2">
+                <div class="stat-num">1<em>:1</em></div>
+                <div class="stat-label">Persönliche Betreuung</div>
+              </div>
+              <div class="stat-item reveal reveal-delay-3">
+                <div class="stat-num">0</div>
+                <div class="stat-label">Kompromisse beim Design</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="portfolio-section">
+          <div class="container">
+            <div class="section-header reveal">
+              <div>
+                <span class="section-label">Portfolio</span>
+                <h2 style="margin-top: 24px">Ausgewählte<br />Projekte</h2>
+              </div>
+              <a href="#portfolio" data-route="portfolio" class="btn-secondary"
+                ><span>Alle ansehen</span></a
+              >
+            </div>
+          </div>
+          <div class="container">
+            <a
+              href="#einfamilienhaeuser"
+              data-route="einfamilienhaeuser"
+              class="proj-feature reveal"
+            >
+              <div class="proj-feature-img">
+                <img
+                  src="bilder/einfamilienhäuser/eingang.jpeg"
+                  alt="Einfamilienhäuser"
+                />
+                <div class="proj-feature-num">01</div>
+              </div>
+              <div class="proj-feature-info">
+                <span class="section-label">Wohnbau</span>
+                <h2>Einfamilienhäuser</h2>
+                <p>
+                  Individuelle Wohnhäuser in Leopoldsdorf — maßgeschneidert auf
+                  die Bedürfnisse der Bauherren, mit durchdachten Grundrissen
+                  und hochwertiger Materialwahl.
+                </p>
+                <div class="proj-feature-meta">
+                  <span>Leopoldsdorf</span>
+                  <span>Einfamilienhaus</span>
                 </div>
-                <div class="detail-item">
-                  <dt>Schwerpunkt</dt>
-                  <dd>Wien, Niederösterreich, Burgenland</dd>
+                <span class="arrow-link">Projekt ansehen</span>
+              </div>
+            </a>
+            <div style="height: 4px"></div>
+            <div class="proj-pair">
+              <a
+                href="#wohnhaeuser"
+                data-route="wohnhaeuser"
+                class="proj-card reveal reveal-delay-1"
+              >
+                <img src="bilder/wohnhäuser/wohnhaus.jpeg" alt="Wohnhäuser" />
+                <div class="proj-card-overlay">
+                  <span class="proj-tag">Wien · Wohnbau · 2023</span>
+                  <h3 class="proj-card-title">Moderne Wohnanlage</h3>
                 </div>
-                <div class="detail-item">
-                  <dt>Erstgespräch</dt>
-                  <dd>Kostenlos &amp; unverbindlich</dd>
+                <div class="proj-arrow">↗</div>
+              </a>
+              <a
+                href="#gewerbeobjekte"
+                data-route="gewerbeobjekte"
+                class="proj-card reveal reveal-delay-2"
+              >
+                <img
+                  src="bilder/gewerbeobjekte/vorne.JPEG"
+                  alt="Gewerbeobjekte"
+                />
+                <div class="proj-card-overlay">
+                  <span class="proj-tag">Traiskirchen · Gewerbe · 2008</span>
+                  <h3 class="proj-card-title">Büro &amp; Lagerhalle</h3>
                 </div>
-                <div class="detail-item">
-                  <dt>Telefon</dt>
-                  <dd>
-                    <a href="tel:+436766931597">+43 676 693 1597</a>
-                  </dd>
-                </div>
+                <div class="proj-arrow">↗</div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="philosophy-section">
+          <div class="philosophy-visual">
+            <img
+              src="bilder/einfamilienhäuser/garten.jpeg"
+              alt="Architektur Detail"
+            />
+          </div>
+          <div class="philosophy-content">
+            <span class="section-label reveal">Philosophie</span>
+            <blockquote class="philosophy-quote reveal reveal-delay-1">
+              Gutes Bauen ist Präzision im Denken und Mut im Gestalten.
+            </blockquote>
+            <p class="philosophy-text reveal reveal-delay-2">
+              Architektur ist mehr als die Summe ihrer Pläne. Jedes Projekt
+              beginnt mit einer Frage: Was brauchen die Menschen, die hier leben
+              oder arbeiten werden? Mit über 15 Jahren Erfahrung begleite ich
+              Bauvorhaben von der ersten Skizze bis zur Schlüsselübergabe.
+            </p>
+            <a
+              href="#about"
+              data-route="about"
+              class="btn-light reveal reveal-delay-3"
+              ><span>Mehr über mich</span></a
+            >
+          </div>
+        </section>
+
+        <section class="services-section">
+          <div class="container">
+            <div class="section-header reveal">
+              <div>
+                <span class="section-label">Leistungen</span>
+                <h2 style="margin-top: 24px">Alles aus<br />einer Hand</h2>
               </div>
               <a
-                href="#about"
-                class="btn-secondary reveal reveal-delay-4"
-                data-link
-                ><span>Mehr erfahren</span></a
+                href="#leistungen"
+                data-route="leistungen"
+                class="btn-secondary"
+                ><span>Alle Leistungen</span></a
               >
             </div>
+            <div class="services-grid">
+              <div class="service-card reveal">
+                <div class="service-num">01</div>
+                <h3>Entwurfsplanung</h3>
+                <p>
+                  Von der ersten Skizze bis zum fertigen Konzept —
+                  maßgeschneidert für Ihr Vorhaben.
+                </p>
+              </div>
+              <div class="service-card reveal reveal-delay-1">
+                <div class="service-num">02</div>
+                <h3>Einreichplanung</h3>
+                <p>
+                  Alle Unterlagen für die Baubehörde — professionell vorbereitet
+                  und eingereicht.
+                </p>
+              </div>
+              <div class="service-card reveal reveal-delay-2">
+                <div class="service-num">03</div>
+                <h3>Ausführungsplanung</h3>
+                <p>
+                  Detailpläne, Ausschreibung und Vergabebegleitung für
+                  reibungslose Umsetzung.
+                </p>
+              </div>
+              <div class="service-card reveal reveal-delay-3">
+                <div class="service-num">04</div>
+                <h3>Sanierung &amp; Umbau</h3>
+                <p>
+                  Behutsame Modernisierung mit Respekt vor der bestehenden
+                  Bausubstanz.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-    </section>
+        </section>
 
-    <!-- ════════════════════════════════════════════════════
-         PORTFOLIO
-    ════════════════════════════════════════════════════ -->
-    <section id="portfolio">
-      <div class="page-hero">
-        <div class="container">
-          <span class="section-label page-hero-eyebrow reveal">Portfolio</span>
-          <h1 class="page-hero-title reveal reveal-delay-1">
-            Ausgewählte<br /><em>Projekte</em>
-          </h1>
-          <p class="page-hero-sub reveal reveal-delay-2">
-            Eine Auswahl architektonischer Arbeiten aus über 15 Jahren Praxis in
-            Wien und Niederösterreich
+        <section class="about-teaser">
+          <div class="container">
+            <div class="about-teaser-inner">
+              <div class="about-portrait reveal">
+                <img
+                  src="bilder/über mich/Profilbild.png"
+                  alt="Danjela Gaba — Architektin"
+                />
+                <div class="about-portrait-border"></div>
+              </div>
+              <div class="about-content">
+                <span class="section-label reveal">Über Mich</span>
+                <h2 class="about-name reveal reveal-delay-1">Danjela Gaba</h2>
+                <span class="about-role reveal reveal-delay-1"
+                  >Diplom-Ingenieurin für Architektur</span
+                >
+                <p class="reveal reveal-delay-2">
+                  Ich plane Wohn- und Gewerbebau in Wien und Niederösterreich —
+                  mit dem Anspruch, dass jedes Projekt seine Bauherren
+                  langfristig begeistert.
+                </p>
+                <p class="reveal reveal-delay-2">
+                  Studium an der Polytechnischen Universität Tirana,
+                  Nostrifikation an der TU Wien. Seit über 15 Jahren tätig in
+                  der Region.
+                </p>
+                <div class="about-details reveal reveal-delay-3">
+                  <div class="detail-item">
+                    <dt>Standort</dt>
+                    <dd>Wiener Neudorf, NÖ</dd>
+                  </div>
+                  <div class="detail-item">
+                    <dt>Schwerpunkt</dt>
+                    <dd>Wien, Niederösterreich, Burgenland</dd>
+                  </div>
+                  <div class="detail-item">
+                    <dt>Erstgespräch</dt>
+                    <dd>Kostenlos &amp; unverbindlich</dd>
+                  </div>
+                  <div class="detail-item">
+                    <dt>Telefon</dt>
+                    <dd><a href="tel:+436766931597">+43 676 693 1597</a></dd>
+                  </div>
+                </div>
+                <a
+                  href="#about"
+                  data-route="about"
+                  class="btn-secondary reveal reveal-delay-4"
+                  ><span>Mehr erfahren</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <span class="section-label cta-label reveal"
+            >Ihr nächstes Projekt</span
+          >
+          <h2 class="reveal reveal-delay-1">
+            Lassen Sie uns<br /><em>zusammenarbeiten</em>
+          </h2>
+          <p class="reveal reveal-delay-2">
+            Das erste Gespräch ist kostenlos und unverbindlich.
           </p>
-        </div>
+          <a
+            href="#contact"
+            data-route="contact"
+            class="btn-primary reveal reveal-delay-3"
+            ><span>Jetzt Kontakt aufnehmen</span></a
+          >
+        </section>
       </div>
 
-      <section class="portfolio-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <div>
-              <span class="section-label">Auswahl</span>
-              <h2 style="margin-top: 24px">Drei<br />Projekte</h2>
-            </div>
-            <a href="#contact" class="btn-secondary" data-link
-              ><span>Projekt anfragen</span></a
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: PORTFOLIO
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="portfolio">
+        <section class="page-hero">
+          <div class="container">
+            <span class="section-label page-hero-eyebrow reveal"
+              >Portfolio</span
             >
+            <h1 class="page-hero-title reveal reveal-delay-1">
+              Ausgewählte<br /><em>Projekte</em>
+            </h1>
+            <p class="page-hero-sub reveal reveal-delay-2">
+              Eine Auswahl architektonischer Arbeiten aus über 15 Jahren Praxis
+              in Wien und Niederösterreich
+            </p>
           </div>
+        </section>
 
-          <!-- Project 1 – Featured -->
-          <a
-            href="#projekt-einfamilienhaeuser"
-            class="proj-feature reveal"
-            data-link
+        <section style="padding: 110px 0; background: var(--stone)">
+          <div class="container">
+            <a
+              href="#einfamilienhaeuser"
+              data-route="einfamilienhaeuser"
+              class="proj-feature reveal"
+            >
+              <div class="proj-feature-img">
+                <img
+                  src="bilder/einfamilienhäuser/eingang.jpeg"
+                  alt="Einfamilienhäuser"
+                />
+                <div class="proj-feature-num">01</div>
+              </div>
+              <div class="proj-feature-info">
+                <span class="section-label">Wohnbau</span>
+                <h2>Einfamilienhäuser</h2>
+                <p>
+                  Individuelle Wohnhäuser in Leopoldsdorf — maßgeschneidert auf
+                  die Bedürfnisse der Bauherren, mit durchdachten Grundrissen
+                  und hochwertiger Materialwahl.
+                </p>
+                <div class="proj-feature-meta">
+                  <span>Leopoldsdorf</span>
+                  <span>Einfamilienhaus</span>
+                </div>
+                <span class="arrow-link">Projekt ansehen</span>
+              </div>
+            </a>
+            <div style="height: 4px"></div>
+            <div class="proj-pair">
+              <a
+                href="#wohnhaeuser"
+                data-route="wohnhaeuser"
+                class="proj-card reveal reveal-delay-1"
+              >
+                <img src="bilder/wohnhäuser/wohnhaus.jpeg" alt="Wohnhäuser" />
+                <div class="proj-card-overlay">
+                  <span class="proj-tag">02 · Wien · 2023</span>
+                  <h3 class="proj-card-title">Moderne Wohnanlage</h3>
+                </div>
+                <div class="proj-arrow">↗</div>
+              </a>
+              <a
+                href="#gewerbeobjekte"
+                data-route="gewerbeobjekte"
+                class="proj-card reveal reveal-delay-2"
+              >
+                <img
+                  src="bilder/gewerbeobjekte/vorne.JPEG"
+                  alt="Gewerbeobjekte"
+                />
+                <div class="proj-card-overlay">
+                  <span class="proj-tag">03 · Traiskirchen · 2008</span>
+                  <h3 class="proj-card-title">Büro &amp; Lagerhalle</h3>
+                </div>
+                <div class="proj-arrow">↗</div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <span class="section-label cta-label">Ihr Projekt</span>
+          <h2>Ihr Projekt<br /><em>fehlt hier noch</em></h2>
+          <p>Lassen Sie uns gemeinsam etwas Bleibendes schaffen.</p>
+          <a href="#contact" data-route="contact" class="btn-primary"
+            ><span>Jetzt Kontakt aufnehmen</span></a
           >
-            <div class="proj-feature-img img-reveal">
-              <img
-                src="bilder/einfamilienh%C3%A4user/eingang.jpeg"
-                alt="Einfamilienhäuser"
-              />
-              <div class="proj-feature-num">01</div>
-            </div>
-            <div class="proj-feature-info">
-              <span class="section-label">Wohnbau</span>
-              <h2>Einfamilienhäuser</h2>
-              <p>
-                Individuelle Wohnhäuser in Leopoldsdorf — maßgeschneidert auf
-                die Bedürfnisse der Bauherren, mit durchdachten Grundrissen und
-                hochwertiger Materialwahl.
-              </p>
-              <div class="proj-feature-meta">
-                <span>Leopoldsdorf</span>
-                <span>Einfamilienhaus</span>
-              </div>
-              <span class="arrow-link">Projekt ansehen</span>
-            </div>
-          </a>
+        </section>
+      </div>
 
-          <div style="height: 4px"></div>
-
-          <!-- Project 2 & 3 – Side by side -->
-          <div class="proj-pair">
-            <a
-              href="#projekt-wohnhaeuser"
-              class="proj-card reveal reveal-delay-1"
-              data-link
-            >
-              <img
-                src="bilder/wohnh%C3%A4user/wohnhaus.jpeg"
-                alt="Wohnhäuser"
-              />
-              <div class="proj-card-overlay">
-                <span class="proj-tag">02 · Wien · 2023</span>
-                <h3 class="proj-card-title">Moderne Wohnanlage</h3>
-              </div>
-              <div class="proj-arrow">↗</div>
-            </a>
-            <a
-              href="#projekt-gewerbeobjekte"
-              class="proj-card reveal reveal-delay-2"
-              data-link
-            >
-              <img
-                src="bilder/gewerbeobjekte/vorne.JPEG"
-                alt="Gewerbeobjekte"
-              />
-              <div class="proj-card-overlay">
-                <span class="proj-tag">03 · Traiskirchen · 2008</span>
-                <h3 class="proj-card-title">Büro &amp; Lagerhalle</h3>
-              </div>
-              <div class="proj-arrow">↗</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── PROJECT DETAIL: EINFAMILIENHÄUSER ──────── -->
-      <div id="projekt-einfamilienhaeuser" class="sub-section">
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: EINFAMILIENHÄUSER
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="einfamilienhaeuser">
         <div class="proj-detail-hero">
           <img
-            src="bilder/einfamilienh%C3%A4user/eingang.jpeg"
+            src="bilder/einfamilienhäuser/eingang.jpeg"
             alt="Einfamilienhaus Leopoldsdorf"
           />
           <div class="proj-detail-hero-overlay">
             <span
               class="section-label"
-              style="margin-bottom: 20px; color: var(--gold-light)"
+              style="margin-bottom: 16px; color: var(--gold-light)"
               >01 · Wohnbau</span
             >
             <h1 class="proj-detail-title">Einfamilienhäuser</h1>
             <span class="proj-detail-sub">Leopoldsdorf, Niederösterreich</span>
           </div>
         </div>
-
         <section class="proj-detail-body">
           <div class="container">
             <div style="margin-bottom: 28px">
-              <a href="#portfolio" class="arrow-link" data-link
+              <a href="#portfolio" data-route="portfolio" class="arrow-link"
                 >Zurück zum Portfolio</a
               >
             </div>
@@ -3296,19 +3259,17 @@
                   Außenraum: Großzügige Öffnungen lassen den Garten ins Haus
                   strömen und schaffen fließende Übergänge zwischen den Räumen.
                 </p>
-
                 <div class="proj-gallery reveal reveal-delay-1">
                   <img
-                    src="bilder/einfamilienh%C3%A4user/eingang.jpeg"
+                    src="bilder/einfamilienhäuser/eingang.jpeg"
                     alt="Eingang"
                   />
                   <img
-                    src="bilder/einfamilienh%C3%A4user/garten.jpeg"
+                    src="bilder/einfamilienhäuser/garten.jpeg"
                     alt="Garten"
                   />
                 </div>
               </div>
-
               <aside class="proj-detail-sidebar reveal reveal-delay-2">
                 <div class="proj-info-block">
                   <dl>
@@ -3327,39 +3288,48 @@
                 </div>
                 <a
                   href="#contact"
+                  data-route="contact"
                   class="btn-secondary"
                   style="width: 100%; justify-content: center"
-                  data-link
                   ><span>Ähnliches Projekt anfragen</span></a
                 >
               </aside>
             </div>
           </div>
         </section>
+        <section class="cta-section">
+          <span class="section-label cta-label">Nächstes Projekt</span>
+          <h2>Lassen Sie uns<br /><em>zusammenarbeiten</em></h2>
+          <p>Das erste Gespräch ist kostenlos und unverbindlich.</p>
+          <a href="#contact" data-route="contact" class="btn-primary"
+            ><span>Jetzt Kontakt aufnehmen</span></a
+          >
+        </section>
       </div>
 
-      <!-- ─── PROJECT DETAIL: WOHNHÄUSER ─────────────── -->
-      <div id="projekt-wohnhaeuser" class="sub-section">
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: WOHNHÄUSER
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="wohnhaeuser">
         <div class="proj-detail-hero">
           <img
-            src="bilder/wohnh%C3%A4user/wohnhaus.jpeg"
+            src="bilder/wohnhäuser/wohnhaus.jpeg"
             alt="Moderne Wohnanlage Wien"
           />
           <div class="proj-detail-hero-overlay">
             <span
               class="section-label"
-              style="margin-bottom: 20px; color: var(--gold-light)"
+              style="margin-bottom: 16px; color: var(--gold-light)"
               >02 · Wohnbau · 2023</span
             >
             <h1 class="proj-detail-title">Moderne Wohnanlage</h1>
             <span class="proj-detail-sub">Wien · 2.500 m²</span>
           </div>
         </div>
-
         <section class="proj-detail-body">
           <div class="container">
             <div style="margin-bottom: 28px">
-              <a href="#portfolio" class="arrow-link" data-link
+              <a href="#portfolio" data-route="portfolio" class="arrow-link"
                 >Zurück zum Portfolio</a
               >
             </div>
@@ -3379,17 +3349,15 @@
                   eigenständigen Akzent. Alle Wohneinheiten profitieren von
                   optimaler Belichtung und durchdachten Grundrissen.
                 </p>
-
                 <div class="proj-gallery reveal reveal-delay-1">
                   <div class="proj-gallery-full">
                     <img
-                      src="bilder/wohnh%C3%A4user/wohnhaus.jpeg"
+                      src="bilder/wohnhäuser/wohnhaus.jpeg"
                       alt="Wohnanlage Gesamtansicht"
                     />
                   </div>
                 </div>
               </div>
-
               <aside class="proj-detail-sidebar reveal reveal-delay-2">
                 <div class="proj-info-block">
                   <dl>
@@ -3411,19 +3379,29 @@
                 </div>
                 <a
                   href="#contact"
+                  data-route="contact"
                   class="btn-secondary"
                   style="width: 100%; justify-content: center"
-                  data-link
                   ><span>Ähnliches Projekt anfragen</span></a
                 >
               </aside>
             </div>
           </div>
         </section>
+        <section class="cta-section">
+          <span class="section-label cta-label">Nächstes Projekt</span>
+          <h2>Lassen Sie uns<br /><em>zusammenarbeiten</em></h2>
+          <p>Das erste Gespräch ist kostenlos und unverbindlich.</p>
+          <a href="#contact" data-route="contact" class="btn-primary"
+            ><span>Jetzt Kontakt aufnehmen</span></a
+          >
+        </section>
       </div>
 
-      <!-- ─── PROJECT DETAIL: GEWERBEOBJEKTE ─────────── -->
-      <div id="projekt-gewerbeobjekte" class="sub-section">
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: GEWERBEOBJEKTE
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="gewerbeobjekte">
         <div class="proj-detail-hero">
           <img
             src="bilder/gewerbeobjekte/vorne.JPEG"
@@ -3432,18 +3410,17 @@
           <div class="proj-detail-hero-overlay">
             <span
               class="section-label"
-              style="margin-bottom: 20px; color: var(--gold-light)"
+              style="margin-bottom: 16px; color: var(--gold-light)"
               >03 · Gewerbe · 2008</span
             >
             <h1 class="proj-detail-title">Büro &amp; Lagerhalle</h1>
             <span class="proj-detail-sub">Traiskirchen, Niederösterreich</span>
           </div>
         </div>
-
         <section class="proj-detail-body">
           <div class="container">
             <div style="margin-bottom: 28px">
-              <a href="#portfolio" class="arrow-link" data-link
+              <a href="#portfolio" data-route="portfolio" class="arrow-link"
                 >Zurück zum Portfolio</a
               >
             </div>
@@ -3465,7 +3442,6 @@
                   natürliches Licht in die Arbeitsräume und vermitteln Offenheit
                   nach außen.
                 </p>
-
                 <div class="proj-gallery reveal reveal-delay-1">
                   <div class="proj-gallery-full">
                     <img
@@ -3486,7 +3462,6 @@
                   <img src="bilder/gewerbeobjekte/Ans.jpg" alt="Ansicht" />
                 </div>
               </div>
-
               <aside class="proj-detail-sidebar reveal reveal-delay-2">
                 <div class="proj-info-block">
                   <dl>
@@ -3506,705 +3481,700 @@
                 </div>
                 <a
                   href="#contact"
+                  data-route="contact"
                   class="btn-secondary"
                   style="width: 100%; justify-content: center"
-                  data-link
                   ><span>Ähnliches Projekt anfragen</span></a
                 >
               </aside>
             </div>
           </div>
         </section>
-      </div>
-    </section>
-
-    <!-- ════════════════════════════════════════════════════
-         LEISTUNGEN
-    ════════════════════════════════════════════════════ -->
-    <section id="leistungen">
-      <div class="page-hero">
-        <div class="container">
-          <span class="section-label page-hero-eyebrow reveal">Leistungen</span>
-          <h1 class="page-hero-title reveal reveal-delay-1">
-            Alles aus<br /><em>einer Hand</em>
-          </h1>
-          <p class="page-hero-sub reveal reveal-delay-2">
-            Von der ersten Idee bis zur Schlüsselübergabe — Ihr Projekt in
-            besten Händen
-          </p>
-        </div>
-      </div>
-
-      <section class="approach-block">
-        <div class="container">
-          <div class="approach-grid">
-            <div class="reveal">
-              <span class="section-label">Mein Ansatz</span>
-            </div>
-            <p class="approach-text reveal reveal-delay-1">
-              Als Architektin begleite ich Sie durch alle Phasen Ihres
-              Bauvorhabens — mit dem Ziel, Ihre Vision in die Realität
-              umzusetzen und dabei Funktionalität, Ästhetik und
-              Wirtschaftlichkeit im Blick zu behalten.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="leistungen-section">
-        <div class="container">
-          <div class="leistungen-numbered">
-            <div class="leistung-row reveal">
-              <div class="leistung-num">01</div>
-              <div class="leistung-content">
-                <h3>Entwurfsplanung</h3>
-                <p>
-                  Entwicklung individueller Konzepte und maßgeschneiderter
-                  Lösungen für Ihr Bauvorhaben. Von der ersten Skizze bis zum
-                  fertigen Entwurf — immer mit Ihren Wünschen und dem Budget im
-                  Blick.
-                </p>
-                <ul class="leistung-tags">
-                  <li>Bestandsaufnahme &amp; Analyse</li>
-                  <li>Konzeptentwicklung</li>
-                  <li>3D-Visualisierungen</li>
-                  <li>Grundrissplanung</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="leistung-row reveal">
-              <div class="leistung-num">02</div>
-              <div class="leistung-content">
-                <h3>Einreichplanung</h3>
-                <p>
-                  Professionelle Erstellung aller erforderlichen Unterlagen für
-                  die Baubehörde. Ich koordiniere das gesamte
-                  Genehmigungsverfahren — Sie müssen sich um nichts kümmern.
-                </p>
-                <ul class="leistung-tags">
-                  <li>Einreichpläne</li>
-                  <li>Statische Berechnungen</li>
-                  <li>Energieausweis</li>
-                  <li>Behördenabwicklung</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="leistung-row reveal">
-              <div class="leistung-num">03</div>
-              <div class="leistung-content">
-                <h3>Ausführungsplanung</h3>
-                <p>
-                  Detaillierte Werkpläne, Ausschreibungsunterlagen und
-                  Begleitung der Vergabe an Handwerker und Unternehmen. Die
-                  Basis für eine reibungslose Bauausführung.
-                </p>
-                <ul class="leistung-tags">
-                  <li>Werkpläne &amp; Details</li>
-                  <li>Leistungsverzeichnisse</li>
-                  <li>Ausschreibung</li>
-                  <li>Vergabebegleitung</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="leistung-row reveal">
-              <div class="leistung-num">04</div>
-              <div class="leistung-content">
-                <h3>Sanierung &amp; Umbau</h3>
-                <p>
-                  Behutsame Modernisierung bestehender Gebäude — mit Respekt vor
-                  der Bausubstanz und dem Ziel, Altes und Neues harmonisch zu
-                  verbinden.
-                </p>
-                <ul class="leistung-tags">
-                  <li>Bestandsanalyse</li>
-                  <li>Energetische Sanierung</li>
-                  <li>Umbauplanung</li>
-                  <li>Denkmalschutz</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="leistung-row reveal">
-              <div class="leistung-num">05</div>
-              <div class="leistung-content">
-                <h3>Örtliche Bauaufsicht</h3>
-                <p>
-                  Ich begleite die Bauausführung vor Ort, kontrolliere die
-                  Qualität der Arbeiten und koordiniere die beteiligten Gewerke
-                  — für einen reibungslosen Bauablauf.
-                </p>
-                <ul class="leistung-tags">
-                  <li>Qualitätskontrolle</li>
-                  <li>Koordination der Gewerke</li>
-                  <li>Mängelprotokoll</li>
-                  <li>Abnahme</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section">
-        <span class="section-label cta-label reveal">Erstgespräch</span>
-        <h2 class="reveal reveal-delay-1">
-          Kostenlos &amp;<br /><em>unverbindlich</em>
-        </h2>
-        <p class="reveal reveal-delay-2">
-          Sprechen Sie mit mir über Ihr Vorhaben — ich freue mich auf Ihre
-          Anfrage.
-        </p>
-        <a href="#contact" class="btn-primary reveal reveal-delay-3" data-link
-          ><span>Jetzt anfragen</span></a
-        >
-      </section>
-    </section>
-
-    <!-- ════════════════════════════════════════════════════
-         ABOUT
-    ════════════════════════════════════════════════════ -->
-    <section id="about">
-      <div class="page-hero">
-        <div class="container">
-          <span class="section-label page-hero-eyebrow reveal">Über Mich</span>
-          <h1 class="page-hero-title reveal reveal-delay-1">Danjela Gaba</h1>
-          <p class="page-hero-sub reveal reveal-delay-2">
-            Diplom-Ingenieurin für Architektur
-          </p>
-        </div>
-      </div>
-
-      <section class="about-section">
-        <div class="container">
-          <div class="about-layout">
-            <aside class="about-sidebar reveal">
-              <div class="portrait-wrap img-reveal">
-                <img
-                  src="bilder/%C3%BCber%20mich/Profilbild.png"
-                  alt="Danjela Gaba — Architektin"
-                />
-              </div>
-              <div class="sidebar-meta">
-                <div class="meta-item">
-                  <dt>Standort</dt>
-                  <dd>Wiener Neudorf, NÖ</dd>
-                </div>
-                <div class="meta-item">
-                  <dt>Schwerpunkt</dt>
-                  <dd>Wien, Niederösterreich, Burgenland</dd>
-                </div>
-                <div class="meta-item">
-                  <dt>E-Mail</dt>
-                  <dd>
-                    <a href="mailto:danjela.gaba@hotmail.com"
-                      >danjela.gaba@hotmail.com</a
-                    >
-                  </dd>
-                </div>
-                <div class="meta-item">
-                  <dt>Telefon</dt>
-                  <dd><a href="tel:+436766931597">+43 676 693 1597</a></dd>
-                </div>
-              </div>
-            </aside>
-
-            <div class="about-body">
-              <h2 class="about-name-large reveal">Danjela Gaba</h2>
-              <span class="about-role-label reveal reveal-delay-1"
-                ><b>Diplom-Ingenieurin für Architektur</b></span
-              >
-
-              <p class="reveal reveal-delay-2">
-                Architektur ist für mich kein Beruf, sondern eine Haltung. Jedes
-                Gebäude, das ich plane, soll mehr sein als ein funktionierender
-                Baukörper — es soll die Menschen, die darin leben oder arbeiten,
-                langfristig begeistern.
-              </p>
-
-              <p class="reveal reveal-delay-2">
-                Mit Sorgfalt, Präzision und echtem Interesse an den Wünschen
-                meiner Bauherren begleite ich jedes Projekt von der ersten Idee
-                bis zur Schlüsselübergabe.
-              </p>
-
-              <h3 class="about-section-title reveal">Curriculum Vitae</h3>
-              <ul class="cv-list reveal reveal-delay-1">
-                <li>
-                  <span class="cv-year">1976</span>
-                  <span class="cv-text">Geboren in Ballsh, Albanien</span>
-                </li>
-                <li>
-                  <span class="cv-year">—</span>
-                  <span class="cv-text"
-                    >Gymnasium „Dervish Hekali", Ballsh</span
-                  >
-                </li>
-                <li>
-                  <span class="cv-year">—</span>
-                  <span class="cv-text"
-                    >Studium an der Polytechnischen Universität Tirana, Fakultät
-                    für Bauingenieurwesen</span
-                  >
-                </li>
-                <li>
-                  <span class="cv-year">—</span>
-                  <span class="cv-text"
-                    >Nostrifizierung des Studienabschlusses an der Technischen
-                    Universität Wien</span
-                  >
-                </li>
-                <li>
-                  <span class="cv-year">Heute</span>
-                  <span class="cv-text"
-                    >Selbstständige Architektin in Wiener Neudorf · Mutter von
-                    Isabella &amp; Lennard</span
-                  >
-                </li>
-              </ul>
-
-              <h3 class="about-section-title reveal">Meine Philosophie</h3>
-              <blockquote class="about-quote-block reveal reveal-delay-1">
-                Gutes Bauen bedeutet mehr als Funktionalität — es bedeutet,
-                Räume zu schaffen, die inspirieren, den Menschen dienen und die
-                Zeit überdauern.
-              </blockquote>
-
-              <h3 class="about-section-title reveal">Leistungsschwerpunkte</h3>
-              <ul class="services-list reveal reveal-delay-1">
-                <li>Architekturplanung für Wohngebäude</li>
-                <li>Umbau- und Renovierungskonzepte</li>
-                <li>Innenarchitektur und Raumgestaltung</li>
-                <li>Gewerbliche Bauprojekte</li>
-              </ul>
-
-              <div
-                style="
-                  display: flex;
-                  gap: 22px;
-                  margin-top: 60px;
-                  flex-wrap: wrap;
-                "
-                class="reveal reveal-delay-2"
-              >
-                <a href="#contact" class="btn-secondary" data-link
-                  ><span>Kontakt aufnehmen</span></a
-                >
-                <a href="#portfolio" class="btn-primary" data-link
-                  ><span>Projekte ansehen</span></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <!-- ════════════════════════════════════════════════════
-         FAQ
-    ════════════════════════════════════════════════════ -->
-    <section id="faq">
-      <div class="page-hero">
-        <div class="container">
-          <span class="section-label page-hero-eyebrow reveal"
-            >Häufige Fragen</span
+        <section class="cta-section">
+          <span class="section-label cta-label">Nächstes Projekt</span>
+          <h2>Lassen Sie uns<br /><em>zusammenarbeiten</em></h2>
+          <p>Das erste Gespräch ist kostenlos und unverbindlich.</p>
+          <a href="#contact" data-route="contact" class="btn-primary"
+            ><span>Jetzt Kontakt aufnehmen</span></a
           >
-          <h1 class="page-hero-title reveal reveal-delay-1">
-            Was Sie<br /><em>wissen möchten</em>
-          </h1>
-          <p class="page-hero-sub reveal reveal-delay-2">
-            Antworten auf die häufigsten Fragen rund um Architektur, Planung und
-            Zusammenarbeit
-          </p>
-        </div>
+        </section>
       </div>
 
-      <section class="faq-section">
-        <div class="container" style="max-width: 920px">
-          <div class="faq-list reveal">
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                Was kostet ein erstes Beratungsgespräch?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Das erste Gespräch ist für Sie kostenlos und völlig
-                  unverbindlich. Ich möchte Ihr Vorhaben kennenlernen und Ihnen
-                  zeigen, wie ich Ihnen helfen kann — ohne versteckte Kosten.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                In welchem Bereich sind Sie tätig?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Mein Hauptwirkungsbereich ist Wien und Niederösterreich. Für
-                  größere Projekte bin ich auch darüber hinaus tätig — sprechen
-                  Sie mich einfach an.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                Wie läuft ein Architekturprojekt typischerweise ab?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Ein Projekt beginnt mit einem unverbindlichen Erstgespräch, in
-                  dem wir Ihre Wünsche und Anforderungen besprechen. Danach
-                  folgen Entwurfsplanung, Einreichplanung bei der Baubehörde,
-                  Ausführungsplanung und — wenn gewünscht — die örtliche
-                  Bauaufsicht. Ich begleite Sie durch alle Phasen persönlich.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                Wie lange dauert die Planungsphase?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Das hängt stark vom Umfang des Projekts ab. Ein
-                  Einfamilienhaus braucht typischerweise 4–8 Wochen für den
-                  Entwurf. Die Einreichplanung und Genehmigung durch die Behörde
-                  kann je nach Gemeinde mehrere Monate in Anspruch nehmen — das
-                  liegt nicht in meiner Hand, ich begleite Sie jedoch dabei so
-                  effizient wie möglich.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                Übernehmen Sie auch die Behördenabwicklung?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Ja, ich übernehme die vollständige Einreichplanung und
-                  Abwicklung mit der Baubehörde. Sie müssen sich darum nicht
-                  selbst kümmern — ich kenne die Anforderungen und Abläufe und
-                  sorge dafür, dass alles reibungslos verläuft.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                Planen Sie auch Umbauten und Sanierungen?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Ja, Sanierungen und Umbauten machen einen wichtigen Teil
-                  meiner Arbeit aus. Ich analysiere den Bestand, erarbeite
-                  konzeptionelle Lösungen und plane die Modernisierung so, dass
-                  Altes und Neues harmonisch zusammenpassen.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                Wie werden Ihre Honorare berechnet?
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">
-                  Die Honorare richten sich nach dem Umfang der beauftragten
-                  Leistungen und dem Projektvolumen. In Österreich gibt es dafür
-                  Richtwerte der Bundeskammer der Architekten. Nach unserem
-                  ersten Gespräch erhalten Sie ein klares, transparentes Angebot
-                  — ohne böse Überraschungen.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top: 88px; text-align: center" class="reveal">
-            <p
-              style="font-size: 0.92rem; color: var(--ash); margin-bottom: 32px"
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: LEISTUNGEN
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="leistungen">
+        <section class="page-hero">
+          <div class="container">
+            <span class="section-label page-hero-eyebrow reveal"
+              >Leistungen</span
             >
-              Noch eine Frage? Ich antworte persönlich.
+            <h1 class="page-hero-title reveal reveal-delay-1">
+              Alles aus<br /><em>einer Hand</em>
+            </h1>
+            <p class="page-hero-sub reveal reveal-delay-2">
+              Von der ersten Idee bis zur Schlüsselübergabe — Ihr Projekt in
+              besten Händen
             </p>
-            <a href="#contact" class="btn-secondary" data-link
-              ><span>Nachricht schreiben</span></a
-            >
           </div>
-        </div>
-      </section>
-    </section>
+        </section>
 
-    <!-- ════════════════════════════════════════════════════
-         CONTACT
-    ════════════════════════════════════════════════════ -->
-    <section id="contact">
-      <div class="page-hero">
-        <div class="container">
-          <span class="section-label page-hero-eyebrow reveal">Kontakt</span>
-          <h1 class="page-hero-title reveal reveal-delay-1">
-            Lassen Sie uns<br /><em>sprechen</em>
-          </h1>
-          <p class="page-hero-sub reveal reveal-delay-2">
-            Das erste Gespräch ist kostenlos und unverbindlich
-          </p>
-        </div>
-      </div>
-
-      <section class="contact-section">
-        <div class="container">
-          <div class="contact-layout">
-            <div class="contact-info reveal">
-              <h2>Ich freue mich auf<br />Ihre Nachricht</h2>
-              <p>
-                Erzählen Sie mir von Ihrem Vorhaben — gemeinsam finden wir die
-                beste Lösung für Ihr Projekt.
+        <section class="approach-block">
+          <div class="container">
+            <div class="approach-grid">
+              <div class="reveal">
+                <span class="section-label">Mein Ansatz</span>
+              </div>
+              <p class="approach-text reveal reveal-delay-1">
+                Als Architektin begleite ich Sie durch alle Phasen Ihres
+                Bauvorhabens — mit dem Ziel, Ihre Vision in die Realität
+                umzusetzen und dabei Funktionalität, Ästhetik und
+                Wirtschaftlichkeit im Blick zu behalten.
               </p>
-              <div class="contact-info-items">
-                <div class="contact-info-item">
-                  <dt>E-Mail</dt>
-                  <dd>
-                    <a href="mailto:danjela.gaba@hotmail.com"
-                      >danjela.gaba@hotmail.com</a
-                    >
-                  </dd>
+            </div>
+          </div>
+        </section>
+
+        <section class="leistungen-section">
+          <div class="container">
+            <div class="leistungen-numbered">
+              <div class="leistung-row reveal">
+                <div class="leistung-num">01</div>
+                <div class="leistung-content">
+                  <h3>Entwurfsplanung</h3>
+                  <p>
+                    Entwicklung individueller Konzepte und maßgeschneiderter
+                    Lösungen für Ihr Bauvorhaben. Von der ersten Skizze bis zum
+                    fertigen Entwurf — immer mit Ihren Wünschen und dem Budget
+                    im Blick.
+                  </p>
+                  <ul class="leistung-tags">
+                    <li>Bestandsaufnahme &amp; Analyse</li>
+                    <li>Konzeptentwicklung</li>
+                    <li>3D-Visualisierungen</li>
+                    <li>Grundrissplanung</li>
+                  </ul>
                 </div>
-                <div class="contact-info-item">
-                  <dt>Telefon</dt>
-                  <dd><a href="tel:+436766931597">+43 676 693 1597</a></dd>
+              </div>
+              <div class="leistung-row reveal">
+                <div class="leistung-num">02</div>
+                <div class="leistung-content">
+                  <h3>Einreichplanung</h3>
+                  <p>
+                    Professionelle Erstellung aller erforderlichen Unterlagen
+                    für die Baubehörde. Ich koordiniere das gesamte
+                    Genehmigungsverfahren — Sie müssen sich um nichts kümmern.
+                  </p>
+                  <ul class="leistung-tags">
+                    <li>Einreichpläne</li>
+                    <li>Statische Berechnungen</li>
+                    <li>Energieausweis</li>
+                    <li>Behördenabwicklung</li>
+                  </ul>
                 </div>
-                <div class="contact-info-item">
-                  <dt>Standort</dt>
-                  <dd>Reisenbauer-Ring 7/1/6<br />2351 Wiener Neudorf, NÖ</dd>
+              </div>
+              <div class="leistung-row reveal">
+                <div class="leistung-num">03</div>
+                <div class="leistung-content">
+                  <h3>Ausführungsplanung</h3>
+                  <p>
+                    Detaillierte Werkpläne, Ausschreibungsunterlagen und
+                    Begleitung der Vergabe an Handwerker und Unternehmen. Die
+                    Basis für eine reibungslose Bauausführung.
+                  </p>
+                  <ul class="leistung-tags">
+                    <li>Werkpläne &amp; Details</li>
+                    <li>Leistungsverzeichnisse</li>
+                    <li>Ausschreibung</li>
+                    <li>Vergabebegleitung</li>
+                  </ul>
                 </div>
-                <div style="margin-top: 28px; overflow: hidden">
-                  <iframe
-                    src="https://maps.google.com/maps?q=Reisenbauer-Ring+7,+2351+Wiener+Neudorf,+Austria&output=embed&z=15"
-                    width="100%"
-                    height="240"
-                    style="
-                      border: 1px solid var(--stone-mid);
-                      display: block;
-                      filter: grayscale(40%) contrast(1.05);
-                    "
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  >
-                  </iframe>
+              </div>
+              <div class="leistung-row reveal">
+                <div class="leistung-num">04</div>
+                <div class="leistung-content">
+                  <h3>Sanierung &amp; Umbau</h3>
+                  <p>
+                    Behutsame Modernisierung bestehender Gebäude — mit Respekt
+                    vor der Bausubstanz und dem Ziel, Altes und Neues harmonisch
+                    zu verbinden.
+                  </p>
+                  <ul class="leistung-tags">
+                    <li>Bestandsanalyse</li>
+                    <li>Energetische Sanierung</li>
+                    <li>Umbauplanung</li>
+                    <li>Denkmalschutz</li>
+                  </ul>
                 </div>
-                <div class="contact-info-item" style="border-bottom: none">
-                  <dt>Erreichbarkeit</dt>
-                  <dd>Mo–Fr, 8:00–18:00 Uhr</dd>
+              </div>
+              <div class="leistung-row reveal">
+                <div class="leistung-num">05</div>
+                <div class="leistung-content">
+                  <h3>Örtliche Bauaufsicht</h3>
+                  <p>
+                    Ich begleite die Bauausführung vor Ort, kontrolliere die
+                    Qualität der Arbeiten und koordiniere die beteiligten
+                    Gewerke — für einen reibungslosen Bauablauf.
+                  </p>
+                  <ul class="leistung-tags">
+                    <li>Qualitätskontrolle</li>
+                    <li>Koordination der Gewerke</li>
+                    <li>Mängelprotokoll</li>
+                    <li>Abnahme</li>
+                  </ul>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div class="contact-form-wrap reveal reveal-delay-1">
-              <form
-                class="contact-form"
-                action="https://formspree.io/f/xnjgplkg"
-                method="POST"
-              >
-                <div class="form-row">
-                  <div class="form-field">
-                    <label for="name">Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      placeholder="Ihr vollständiger Name"
-                    />
-                  </div>
-                  <div class="form-field">
-                    <label for="email">E-Mail *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      placeholder="ihre@email.at"
-                    />
-                  </div>
-                </div>
-                <div class="form-field">
-                  <label for="phone">Telefon</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+43 ..."
+        <section class="cta-section">
+          <span class="section-label cta-label">Erstgespräch</span>
+          <h2>Kostenlos &amp;<br /><em>unverbindlich</em></h2>
+          <p>
+            Sprechen Sie mit mir über Ihr Vorhaben — ich freue mich auf Ihre
+            Anfrage.
+          </p>
+          <a href="#contact" data-route="contact" class="btn-primary"
+            ><span>Jetzt anfragen</span></a
+          >
+        </section>
+      </div>
+
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: ABOUT
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="about">
+        <section class="page-hero">
+          <div class="container">
+            <span class="section-label page-hero-eyebrow reveal"
+              >Über Mich</span
+            >
+            <h1 class="page-hero-title reveal reveal-delay-1">Danjela Gaba</h1>
+            <p class="page-hero-sub reveal reveal-delay-2">
+              Diplom-Ingenieurin für Architektur
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <div class="container">
+            <div class="about-layout">
+              <aside class="about-sidebar reveal">
+                <div class="portrait-wrap">
+                  <img
+                    src="bilder/über mich/Profilbild.png"
+                    alt="Danjela Gaba — Architektin"
                   />
                 </div>
-                <div class="form-field">
-                  <label for="projekt">Projektart</label>
-                  <select id="projekt" name="projekt">
-                    <option value="" disabled selected>Bitte wählen</option>
-                    <option>Einfamilienhaus Neubau</option>
-                    <option>Wohnhaus / Mehrfamilienhaus</option>
-                    <option>Gewerbeobjekt</option>
-                    <option>Sanierung / Umbau</option>
-                    <option>Beratung</option>
-                    <option>Sonstiges</option>
-                  </select>
+                <div class="sidebar-meta">
+                  <div class="meta-item">
+                    <dt>Standort</dt>
+                    <dd>Wiener Neudorf, NÖ</dd>
+                  </div>
+                  <div class="meta-item">
+                    <dt>Schwerpunkt</dt>
+                    <dd>Wien, Niederösterreich, Burgenland</dd>
+                  </div>
+                  <div class="meta-item">
+                    <dt>E-Mail</dt>
+                    <dd>
+                      <a href="mailto:danjela.gaba@hotmail.com"
+                        >danjela.gaba@hotmail.com</a
+                      >
+                    </dd>
+                  </div>
+                  <div class="meta-item">
+                    <dt>Telefon</dt>
+                    <dd><a href="tel:+436766931597">+43 676 693 1597</a></dd>
+                  </div>
                 </div>
-                <div class="form-field">
-                  <label for="message">Nachricht *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    placeholder="Beschreiben Sie kurz Ihr Vorhaben — Standort, Größe, Zeitrahmen, Budget ..."
-                  ></textarea>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" id="datenschutz-check" required />
-                  <label for="datenschutz-check"
-                    >Ich habe die
-                    <a
-                      href="javascript:void(0)"
-                      onclick="openModal('datenschutz')"
-                      >Datenschutzerklärung</a
+              </aside>
+              <div class="about-body">
+                <h2 class="about-name-large reveal">Danjela Gaba</h2>
+                <span class="about-role-label reveal reveal-delay-1"
+                  ><b>Diplom-Ingenieurin für Architektur</b></span
+                >
+                <p class="reveal reveal-delay-2">
+                  Architektur ist für mich kein Beruf, sondern eine Haltung.
+                  Jedes Gebäude, das ich plane, soll mehr sein als ein
+                  funktionierender Baukörper — es soll die Menschen, die darin
+                  leben oder arbeiten, langfristig begeistern.
+                </p>
+                <p class="reveal reveal-delay-2">
+                  Mit Sorgfalt, Präzision und echtem Interesse an den Wünschen
+                  meiner Bauherren begleite ich jedes Projekt von der ersten
+                  Idee bis zur Schlüsselübergabe.
+                </p>
+                <h3 class="about-section-title reveal">Curriculum Vitae</h3>
+                <ul class="cv-list reveal reveal-delay-1">
+                  <li>
+                    <span class="cv-year">1976</span>
+                    <span class="cv-text">Geboren in Ballsh, Albanien</span>
+                  </li>
+                  <li>
+                    <span class="cv-year">—</span>
+                    <span class="cv-text"
+                      >Gymnasium „Dervish Hekali", Ballsh</span
                     >
-                    gelesen und stimme der Verarbeitung meiner Daten zu.</label
+                  </li>
+                  <li>
+                    <span class="cv-year">—</span>
+                    <span class="cv-text"
+                      >Studium an der Polytechnischen Universität Tirana,
+                      Fakultät für Bauingenieurwesen</span
+                    >
+                  </li>
+                  <li>
+                    <span class="cv-year">—</span>
+                    <span class="cv-text"
+                      >Nostrifizierung des Studienabschlusses an der Technischen
+                      Universität Wien</span
+                    >
+                  </li>
+                  <li>
+                    <span class="cv-year">Heute</span>
+                    <span class="cv-text"
+                      >Selbstständige Architektin in Wiener Neudorf · Mutter von
+                      Isabella &amp; Lennard</span
+                    >
+                  </li>
+                </ul>
+                <h3 class="about-section-title reveal">Meine Philosophie</h3>
+                <blockquote class="about-quote-block reveal reveal-delay-1">
+                  Gutes Bauen bedeutet mehr als Funktionalität — es bedeutet,
+                  Räume zu schaffen, die inspirieren, den Menschen dienen und
+                  die Zeit überdauern.
+                </blockquote>
+                <h3 class="about-section-title reveal">
+                  Leistungsschwerpunkte
+                </h3>
+                <ul class="services-list reveal reveal-delay-1">
+                  <li>Architekturplanung für Wohngebäude</li>
+                  <li>Umbau- und Renovierungskonzepte</li>
+                  <li>Innenarchitektur und Raumgestaltung</li>
+                  <li>Gewerbliche Bauprojekte</li>
+                </ul>
+                <div
+                  style="
+                    display: flex;
+                    gap: 22px;
+                    margin-top: 60px;
+                    flex-wrap: wrap;
+                  "
+                  class="reveal reveal-delay-2"
+                >
+                  <a href="#contact" data-route="contact" class="btn-secondary"
+                    ><span>Kontakt aufnehmen</span></a
+                  >
+                  <a
+                    href="#portfolio"
+                    data-route="portfolio"
+                    class="btn-primary"
+                    ><span>Projekte ansehen</span></a
                   >
                 </div>
-                <button type="submit" class="btn-submit-form">
-                  <span>Nachricht senden →</span>
-                </button>
-              </form>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </section>
+        </section>
 
-    <!-- ════════════════════════════════════════════════════
-         ABOUT WEBSITE
-    ════════════════════════════════════════════════════ -->
-    <section id="about-website">
-      <section class="aw-hero">
-        <div style="position: relative">
-          <span class="section-label reveal">Webdesign &amp; Entwicklung</span>
-          <h1 class="reveal reveal-delay-1">
-            About This<br /><em>Website</em>
-          </h1>
-          <p class="reveal reveal-delay-2">
-            Diese Website wurde erstellt, um die Arbeit und das Portfolio von
-            Danjela Gaba online zu präsentieren. Das Ziel war eine moderne,
-            übersichtliche und schnelle Website, auf der Besucher leicht
-            erkennen können, welche Leistungen angeboten werden.
-          </p>
-        </div>
-      </section>
+        <section class="cta-section">
+          <span class="section-label cta-label">Ihr Projekt</span>
+          <h2>Lassen Sie uns<br /><em>zusammenarbeiten</em></h2>
+          <p>Das erste Gespräch ist kostenlos und unverbindlich.</p>
+          <a href="#contact" data-route="contact" class="btn-primary"
+            ><span>Jetzt Kontakt aufnehmen</span></a
+          >
+        </section>
+      </div>
 
-      <section class="aw-section">
-        <div class="aw-inner">
-          <span class="aw-label reveal">Umsetzung</span>
-          <h2 class="aw-title reveal reveal-delay-1">
-            Design &amp; Entwicklung
-          </h2>
-          <p class="aw-text reveal reveal-delay-2">
-            Das Design und die Entwicklung dieser Website wurden von Lennard
-            Gaba umgesetzt. Ich habe das Layout, die Struktur sowie die
-            technische Umsetzung der Seite erstellt, mit Fokus auf modernes
-            Design, schnelle Ladezeiten und eine optimale Nutzung auf
-            Smartphones.
-          </p>
-        </div>
-      </section>
-
-      <section class="aw-section">
-        <div class="aw-inner">
-          <span class="aw-label reveal">Leistungen</span>
-          <h2 class="aw-title reveal reveal-delay-1">
-            Meine Arbeit an<br />dieser Website
-          </h2>
-          <ul class="aw-list reveal reveal-delay-2">
-            <li>Webdesign</li>
-            <li>Entwicklung der Website</li>
-            <li>Mobile Optimierung</li>
-            <li>Struktur &amp; Benutzerführung</li>
-            <li>Performance Optimierung</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="aw-section">
-        <div class="aw-inner">
-          <span class="aw-label reveal">Tech Stack</span>
-          <h2 class="aw-title reveal reveal-delay-1">
-            Verwendete<br />Technologien
-          </h2>
-          <ul class="aw-list reveal reveal-delay-2">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Responsive Design</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="aw-cta-section">
-        <div class="aw-inner">
-          <span class="aw-label reveal">Für potenzielle Kunden</span>
-          <h2 class="aw-title reveal reveal-delay-1">
-            Brauchen Sie auch<br />eine Website?
-          </h2>
-          <p class="aw-text reveal reveal-delay-2">
-            Wenn Ihnen diese Website gefällt und Sie ebenfalls eine moderne
-            Website für Ihr Unternehmen, Ihr Portfolio oder Ihr Geschäft
-            möchten, können Sie mich gerne kontaktieren.
-          </p>
-          <div class="aw-contact-buttons reveal reveal-delay-3">
-            <a href="mailto:gabalennard@gmail.com" class="aw-btn-email">
-              ✉ gabalennard@gmail.com
-            </a>
-            <a
-              href="https://wa.me/436769325769"
-              target="_blank"
-              rel="noopener"
-              class="aw-btn-whatsapp"
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: FAQ
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="faq">
+        <section class="page-hero">
+          <div class="container">
+            <span class="section-label page-hero-eyebrow reveal"
+              >Häufige Fragen</span
             >
-              WhatsApp · +43 676 932 5769
-            </a>
+            <h1 class="page-hero-title reveal reveal-delay-1">
+              Was Sie<br /><em>wissen möchten</em>
+            </h1>
+            <p class="page-hero-sub reveal reveal-delay-2">
+              Antworten auf die häufigsten Fragen rund um Architektur, Planung
+              und Zusammenarbeit
+            </p>
           </div>
-        </div>
-      </section>
-    </section>
+        </section>
 
-    <!-- ════════════════════════════════════════════════════
-         GLOBAL CTA
-    ════════════════════════════════════════════════════ -->
-    <section class="cta-section">
-      <span class="section-label cta-label reveal">Ihr nächstes Projekt</span>
-      <h2 class="reveal reveal-delay-1">
-        Lassen Sie uns<br /><em>zusammenarbeiten</em>
-      </h2>
-      <p class="reveal reveal-delay-2">
-        Das erste Gespräch ist kostenlos und unverbindlich.
-      </p>
-      <a href="#contact" class="btn-primary reveal reveal-delay-3" data-link
-        ><span>Jetzt Kontakt aufnehmen</span></a
-      >
-    </section>
+        <section class="faq-section">
+          <div class="container" style="max-width: 920px">
+            <div class="faq-list reveal">
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Was kostet ein erstes Beratungsgespräch?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Das erste Gespräch ist für Sie kostenlos und völlig
+                    unverbindlich. Ich möchte Ihr Vorhaben kennenlernen und
+                    Ihnen zeigen, wie ich Ihnen helfen kann — ohne versteckte
+                    Kosten.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  In welchem Bereich sind Sie tätig?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Mein Hauptwirkungsbereich ist Wien und Niederösterreich. Für
+                    größere Projekte bin ich auch darüber hinaus tätig —
+                    sprechen Sie mich einfach an.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Wie läuft ein Architekturprojekt typischerweise ab?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Ein Projekt beginnt mit einem unverbindlichen Erstgespräch,
+                    in dem wir Ihre Wünsche und Anforderungen besprechen. Danach
+                    folgen Entwurfsplanung, Einreichplanung bei der Baubehörde,
+                    Ausführungsplanung und — wenn gewünscht — die örtliche
+                    Bauaufsicht. Ich begleite Sie durch alle Phasen persönlich.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Wie lange dauert die Planungsphase?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Das hängt stark vom Umfang des Projekts ab. Ein
+                    Einfamilienhaus braucht typischerweise 4–8 Wochen für den
+                    Entwurf. Die Einreichplanung und Genehmigung durch die
+                    Behörde kann je nach Gemeinde mehrere Monate in Anspruch
+                    nehmen — das liegt nicht in meiner Hand, ich begleite Sie
+                    jedoch dabei so effizient wie möglich.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Übernehmen Sie auch die Behördenabwicklung?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Ja, ich übernehme die vollständige Einreichplanung und
+                    Abwicklung mit der Baubehörde. Sie müssen sich darum nicht
+                    selbst kümmern — ich kenne die Anforderungen und Abläufe und
+                    sorge dafür, dass alles reibungslos verläuft.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Planen Sie auch Umbauten und Sanierungen?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Ja, Sanierungen und Umbauten machen einen wichtigen Teil
+                    meiner Arbeit aus. Ich analysiere den Bestand, erarbeite
+                    konzeptionelle Lösungen und plane die Modernisierung so,
+                    dass Altes und Neues harmonisch zusammenpassen.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Wie werden Ihre Honorare berechnet?
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    Die Honorare richten sich nach dem Umfang der beauftragten
+                    Leistungen und dem Projektvolumen. In Österreich gibt es
+                    dafür Richtwerte der Bundeskammer der Architekten. Nach
+                    unserem ersten Gespräch erhalten Sie ein klares,
+                    transparentes Angebot — ohne böse Überraschungen.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 88px; text-align: center" class="reveal">
+              <p
+                style="
+                  font-size: 0.92rem;
+                  color: var(--ash);
+                  margin-bottom: 32px;
+                "
+              >
+                Noch eine Frage? Ich antworte persönlich.
+              </p>
+              <a href="#contact" data-route="contact" class="btn-secondary"
+                ><span>Nachricht schreiben</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
 
-    <!-- ════════════════════════════════════════════════════
-         FOOTER
-    ════════════════════════════════════════════════════ -->
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: CONTACT
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="contact">
+        <section class="page-hero">
+          <div class="container">
+            <span class="section-label page-hero-eyebrow reveal">Kontakt</span>
+            <h1 class="page-hero-title reveal reveal-delay-1">
+              Lassen Sie uns<br /><em>sprechen</em>
+            </h1>
+            <p class="page-hero-sub reveal reveal-delay-2">
+              Das erste Gespräch ist kostenlos und unverbindlich
+            </p>
+          </div>
+        </section>
+
+        <section class="contact-section">
+          <div class="container">
+            <div class="contact-layout">
+              <div class="contact-info reveal">
+                <h2>Ich freue mich auf<br />Ihre Nachricht</h2>
+                <p>
+                  Erzählen Sie mir von Ihrem Vorhaben — gemeinsam finden wir die
+                  beste Lösung für Ihr Projekt.
+                </p>
+                <div class="contact-info-items">
+                  <div class="contact-info-item">
+                    <dt>E-Mail</dt>
+                    <dd>
+                      <a href="mailto:danjela.gaba@hotmail.com"
+                        >danjela.gaba@hotmail.com</a
+                      >
+                    </dd>
+                  </div>
+                  <div class="contact-info-item">
+                    <dt>Telefon</dt>
+                    <dd><a href="tel:+436766931597">+43 676 693 1597</a></dd>
+                  </div>
+                  <div class="contact-info-item">
+                    <dt>Standort</dt>
+                    <dd>Reisenbauer-Ring 7/1/6<br />2351 Wiener Neudorf, NÖ</dd>
+                  </div>
+                  <div style="margin-top: 28px; overflow: hidden">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Reisenbauer-Ring+7,+2351+Wiener+Neudorf,+Austria&output=embed&z=15"
+                      width="100%"
+                      height="240"
+                      style="
+                        border: 1px solid var(--stone-mid);
+                        display: block;
+                        filter: grayscale(40%) contrast(1.05);
+                      "
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                  <div class="contact-info-item" style="border-bottom: none">
+                    <dt>Erreichbarkeit</dt>
+                    <dd>Mo–Fr, 8:00–18:00 Uhr</dd>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-form-wrap reveal reveal-delay-1">
+                <form
+                  class="contact-form"
+                  action="https://formspree.io/f/xnjgplkg"
+                  method="POST"
+                >
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label for="name">Name *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="Ihr vollständiger Name"
+                      />
+                    </div>
+                    <div class="form-field">
+                      <label for="email">E-Mail *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="ihre@email.at"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label for="phone">Telefon</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+43 ..."
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="projekt">Projektart</label>
+                    <select id="projekt" name="projekt">
+                      <option value="" disabled selected>Bitte wählen</option>
+                      <option>Einfamilienhaus Neubau</option>
+                      <option>Wohnhaus / Mehrfamilienhaus</option>
+                      <option>Gewerbeobjekt</option>
+                      <option>Sanierung / Umbau</option>
+                      <option>Beratung</option>
+                      <option>Sonstiges</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="message">Nachricht *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                      placeholder="Beschreiben Sie kurz Ihr Vorhaben — Standort, Größe, Zeitrahmen, Budget ..."
+                    ></textarea>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" id="datenschutz-check" required />
+                    <label for="datenschutz-check">
+                      Ich habe die
+                      <a
+                        href="javascript:void(0)"
+                        onclick="openModal('datenschutz')"
+                        >Datenschutzerklärung</a
+                      >
+                      gelesen und stimme der Verarbeitung meiner Daten zu.
+                    </label>
+                  </div>
+                  <button type="submit" class="btn-submit-form">
+                    <span>Nachricht senden →</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ╔═══════════════════════════════════════════════════════
+         ║ PAGE: ABOUT WEBSITE
+         ╚═══════════════════════════════════════════════════════ -->
+      <div class="page" data-page="about-website">
+        <section class="aw-hero">
+          <div style="position: relative">
+            <span class="section-label reveal"
+              >Webdesign &amp; Entwicklung</span
+            >
+            <h1 class="reveal reveal-delay-1">
+              About This<br /><em>Website</em>
+            </h1>
+            <p class="reveal reveal-delay-2">
+              Diese Website wurde erstellt, um die Arbeit und das Portfolio von
+              Danjela Gaba online zu präsentieren. Das Ziel war eine moderne,
+              übersichtliche und schnelle Website, auf der Besucher leicht
+              erkennen können, welche Leistungen angeboten werden.
+            </p>
+          </div>
+        </section>
+
+        <section class="aw-section">
+          <div class="aw-inner">
+            <span class="aw-label reveal">Umsetzung</span>
+            <h2 class="aw-title reveal reveal-delay-1">
+              Design &amp; Entwicklung
+            </h2>
+            <p class="aw-text reveal reveal-delay-2">
+              Das Design und die Entwicklung dieser Website wurden von Lennard
+              Gaba umgesetzt. Ich habe das Layout, die Struktur sowie die
+              technische Umsetzung der Seite erstellt, mit Fokus auf modernes
+              Design, schnelle Ladezeiten und eine optimale Nutzung auf
+              Smartphones.
+            </p>
+          </div>
+        </section>
+
+        <section class="aw-section">
+          <div class="aw-inner">
+            <span class="aw-label reveal">Leistungen</span>
+            <h2 class="aw-title reveal reveal-delay-1">
+              Meine Arbeit an<br />dieser Website
+            </h2>
+            <ul class="aw-list reveal reveal-delay-2">
+              <li>Webdesign</li>
+              <li>Entwicklung der Website</li>
+              <li>Mobile Optimierung</li>
+              <li>Struktur &amp; Benutzerführung</li>
+              <li>Performance Optimierung</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="aw-section">
+          <div class="aw-inner">
+            <span class="aw-label reveal">Tech Stack</span>
+            <h2 class="aw-title reveal reveal-delay-1">
+              Verwendete<br />Technologien
+            </h2>
+            <ul class="aw-list reveal reveal-delay-2">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="aw-cta-section">
+          <div class="aw-inner">
+            <span class="aw-label reveal">Für potenzielle Kunden</span>
+            <h2 class="aw-title reveal reveal-delay-1">
+              Brauchen Sie auch<br />eine Website?
+            </h2>
+            <p class="aw-text reveal reveal-delay-2">
+              Wenn Ihnen diese Website gefällt und Sie ebenfalls eine moderne
+              Website für Ihr Unternehmen, Ihr Portfolio oder Ihr Geschäft
+              möchten, können Sie mich gerne kontaktieren.
+            </p>
+            <div class="aw-contact-buttons reveal reveal-delay-3">
+              <a href="mailto:gabalennard@gmail.com" class="aw-btn-email">
+                ✉ gabalennard@gmail.com
+              </a>
+              <a
+                href="https://wa.me/436769325769"
+                target="_blank"
+                rel="noopener"
+                class="aw-btn-whatsapp"
+              >
+                WhatsApp · +43 676 932 5769
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ════════════════════════════════════════════════════════
+         FOOTER (always visible)
+    ════════════════════════════════════════════════════════ -->
     <footer>
       <span class="footer-credit">Website by Lennard Gaba</span>
       <div class="footer-inner">
@@ -4222,9 +4192,9 @@
       </div>
     </footer>
 
-    <!-- ════════════════════════════════════════════════════
+    <!-- ════════════════════════════════════════════════════════
          MODALS
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════════ -->
     <div
       id="impressum"
       class="modal"
@@ -4264,6 +4234,7 @@
         <p>März 2026</p>
       </div>
     </div>
+
     <div
       id="datenschutz"
       class="modal"
@@ -4325,9 +4296,9 @@
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
+    <!-- ════════════════════════════════════════════════════════
          LIGHTBOX
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════════ -->
     <div class="lightbox-overlay" id="lightbox">
       <button class="lightbox-close" onclick="closeLightbox()">×</button>
       <button class="lightbox-prev" onclick="lightboxNav(-1)">‹</button>
@@ -4336,78 +4307,143 @@
       <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
+    <!-- ════════════════════════════════════════════════════════
          JAVASCRIPT
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════════ -->
     <script>
-      // ── Page Loader ────────────────────────────────────
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          document.getElementById("loader")?.classList.add("done");
-        }, 1400);
+      // ─── PAGE ROUTER (das Herzstück) ────────────────────
+      const VALID_ROUTES = [
+        "startseite",
+        "portfolio",
+        "leistungen",
+        "about",
+        "faq",
+        "contact",
+        "about-website",
+        "einfamilienhaeuser",
+        "wohnhaeuser",
+        "gewerbeobjekte",
+      ];
+
+      // Map routes to nav items (which nav link should be highlighted)
+      const ROUTE_TO_NAV = {
+        startseite: "startseite",
+        portfolio: "portfolio",
+        einfamilienhaeuser: "portfolio",
+        wohnhaeuser: "portfolio",
+        gewerbeobjekte: "portfolio",
+        leistungen: "leistungen",
+        about: "about",
+        faq: "faq",
+        contact: "contact",
+        "about-website": "about-website",
+      };
+
+      function showPage(route, animated = true) {
+        if (!VALID_ROUTES.includes(route)) route = "startseite";
+
+        const doSwap = () => {
+          // Hide all pages
+          document
+            .querySelectorAll(".page")
+            .forEach((p) => p.classList.remove("active"));
+          // Show target page
+          const target = document.querySelector(`.page[data-page="${route}"]`);
+          if (target) target.classList.add("active");
+
+          // Update active nav link
+          const activeNav = ROUTE_TO_NAV[route];
+          document
+            .querySelectorAll(".nav-links a, .mobile-nav a")
+            .forEach((a) => {
+              a.classList.toggle("active", a.dataset.route === activeNav);
+            });
+
+          // Scroll to top
+          window.scrollTo({ top: 0, behavior: "auto" });
+
+          // Re-trigger reveal animations on new page
+          target?.querySelectorAll(".reveal, .img-reveal").forEach((el) => {
+            el.classList.remove("visible");
+          });
+          // small delay so animation re-plays
+          setTimeout(() => {
+            initReveal();
+            initLightbox(); // re-bind lightbox to new images
+          }, 50);
+
+          // Update document title
+          const titles = {
+            startseite: "Danjela Gaba — Diplom-Ingenieurin für Architektur",
+            portfolio: "Portfolio — Danjela Gaba Architektur",
+            leistungen: "Leistungen — Danjela Gaba Architektur",
+            about: "Über Mich — Danjela Gaba Architektur",
+            faq: "FAQ — Danjela Gaba Architektur",
+            contact: "Kontakt — Danjela Gaba Architektur",
+            "about-website": "About This Website — Danjela Gaba Architektur",
+            einfamilienhaeuser: "Einfamilienhäuser — Danjela Gaba Architektur",
+            wohnhaeuser: "Moderne Wohnanlage — Danjela Gaba Architektur",
+            gewerbeobjekte: "Büro & Lagerhalle — Danjela Gaba Architektur",
+          };
+          document.title = titles[route] || titles.startseite;
+
+          document.body.classList.remove("page-transitioning");
+        };
+
+        if (animated) {
+          document.body.classList.add("page-transitioning");
+          setTimeout(doSwap, 250);
+        } else {
+          doSwap();
+        }
+      }
+
+      function navigateTo(route, pushState = true) {
+        if (pushState && location.hash !== "#" + route) {
+          history.pushState({ route }, "", "#" + route);
+        }
+        showPage(route, true);
+      }
+
+      // Hook all data-route links
+      document.addEventListener("click", (e) => {
+        const link = e.target.closest("[data-route]");
+        if (!link) return;
+        e.preventDefault();
+        const route = link.dataset.route;
+        navigateTo(route);
+        // close mobile nav if open
+        const mobileNav = document.getElementById("mobile-nav");
+        const ham = document.getElementById("hamburger");
+        if (mobileNav && mobileNav.classList.contains("open")) {
+          ham.classList.remove("open");
+          mobileNav.classList.remove("open");
+          document.body.style.overflow = "";
+        }
       });
 
-      // ── Custom Cursor (desktop only) ───────────────────
-      (function () {
-        const isTouch =
-          window.matchMedia("(hover: none)").matches || window.innerWidth < 900;
-        if (isTouch) return;
-        const cursor = document.querySelector(".cursor");
-        const ring = document.querySelector(".cursor-ring");
-        if (!cursor || !ring) return;
+      // Browser back/forward support
+      window.addEventListener("popstate", () => {
+        const route = (location.hash || "#startseite").substring(1);
+        showPage(route, true);
+      });
 
-        let mx = 0,
-          my = 0,
-          rx = 0,
-          ry = 0;
-        document.addEventListener("mousemove", (e) => {
-          mx = e.clientX;
-          my = e.clientY;
-          cursor.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-          document.body.classList.add("has-cursor");
-        });
-        document.addEventListener("mouseleave", () => {
-          document.body.classList.remove("has-cursor");
-        });
+      // Initial route on page load
+      function bootRoute() {
+        const route = (location.hash || "#startseite").substring(1);
+        showPage(route, false);
+      }
 
-        function animate() {
-          rx += (mx - rx) * 0.18;
-          ry += (my - ry) * 0.18;
-          ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-          requestAnimationFrame(animate);
-        }
-        animate();
+      // ─── Page Loader ────────────────────────────────────
+      window.addEventListener("load", () => {
+        bootRoute();
+        setTimeout(() => {
+          const loader = document.getElementById("loader");
+          if (loader) loader.classList.add("done");
+        }, 1000);
+      });
 
-        // hover states
-        const hoverTargets =
-          "a, button, .faq-question, .proj-card, .proj-feature, .service-card, .leistung-row, [role='button'], input[type='submit'], .modal-close, .hamburger";
-        document.addEventListener("mouseover", (e) => {
-          if (e.target.closest(hoverTargets)) {
-            document.body.classList.add("cursor-hover");
-          }
-          if (
-            e.target.matches(
-              "input[type='text'], input[type='email'], input[type='tel'], textarea, select",
-            )
-          ) {
-            document.body.classList.add("cursor-text");
-          }
-        });
-        document.addEventListener("mouseout", (e) => {
-          if (e.target.closest(hoverTargets)) {
-            document.body.classList.remove("cursor-hover");
-          }
-          if (
-            e.target.matches(
-              "input[type='text'], input[type='email'], input[type='tel'], textarea, select",
-            )
-          ) {
-            document.body.classList.remove("cursor-text");
-          }
-        });
-      })();
-
-      // ── Modals ─────────────────────────────────────────
+      // ─── Modals ─────────────────────────────────────────
       function openModal(id) {
         const el = document.getElementById(id);
         if (!el) return;
@@ -4430,37 +4466,35 @@
         }
       });
 
-      // ── Nav scroll & hide on scroll-down ───────────────
+      // ─── Nav scroll ─────────────────────────────────────
       let lastY = 0;
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav.main-nav");
-        if (!nav) return;
-        const y = window.scrollY;
-        nav.classList.toggle("scrolled", y > 40);
-        if (y > 200 && y > lastY) nav.classList.add("hidden");
-        else nav.classList.remove("hidden");
-        lastY = y;
-      });
+      window.addEventListener(
+        "scroll",
+        () => {
+          const nav = document.querySelector("nav.main-nav");
+          if (!nav) return;
+          const y = window.scrollY;
+          nav.classList.toggle("scrolled", y > 40);
+          if (y > 200 && y > lastY) nav.classList.add("hidden");
+          else nav.classList.remove("hidden");
+          lastY = y;
+        },
+        { passive: true },
+      );
 
-      // ── Mobile Nav ─────────────────────────────────────
+      // ─── Mobile Nav ─────────────────────────────────────
       function toggleNav() {
         const btn = document.getElementById("hamburger");
         const mobileNav = document.getElementById("mobile-nav");
+        if (!btn) return;
         btn.classList.toggle("open");
         if (mobileNav) mobileNav.classList.toggle("open");
         document.body.style.overflow = btn.classList.contains("open")
           ? "hidden"
           : "";
       }
-      function closeMobileNav() {
-        const btn = document.getElementById("hamburger");
-        const mobileNav = document.getElementById("mobile-nav");
-        if (btn) btn.classList.remove("open");
-        if (mobileNav) mobileNav.classList.remove("open");
-        document.body.style.overflow = "";
-      }
 
-      // ── FAQ Accordion ──────────────────────────────────
+      // ─── FAQ Accordion ──────────────────────────────────
       function toggleFaq(el) {
         const item = el.closest(".faq-item");
         const isOpen = item.classList.contains("open");
@@ -4475,39 +4509,51 @@
         }
       }
 
-      // ── Scroll Reveal ──────────────────────────────────
-      document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver(
+      // ─── Scroll Reveal ──────────────────────────────────
+      let revealObserver = null;
+      function initReveal() {
+        if (revealObserver) revealObserver.disconnect();
+        revealObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((e) => {
               if (e.isIntersecting) {
                 e.target.classList.add("visible");
-                observer.unobserve(e.target);
+                revealObserver.unobserve(e.target);
               }
             });
           },
           { threshold: 0.08, rootMargin: "0px 0px -60px 0px" },
         );
-        document
-          .querySelectorAll(".reveal, .img-reveal")
-          .forEach((el) => observer.observe(el));
-      });
 
-      // ── Lightbox ───────────────────────────────────────
+        document
+          .querySelectorAll(
+            ".page.active .reveal:not(.visible), .page.active .img-reveal:not(.visible)",
+          )
+          .forEach((el) => revealObserver.observe(el));
+      }
+      document.addEventListener("DOMContentLoaded", initReveal);
+
+      // ─── Lightbox ───────────────────────────────────────
       let lightboxImages = [];
       let lightboxIndex = 0;
 
-      document.addEventListener("DOMContentLoaded", () => {
+      function initLightbox() {
         const imgs = document.querySelectorAll(
-          ".proj-gallery img, .proj-detail-hero img",
+          ".page.active .proj-gallery img, .page.active .proj-detail-hero img",
         );
         imgs.forEach((img, i) => {
+          if (img.dataset.lbBound) return;
+          img.dataset.lbBound = "1";
           img.addEventListener("click", (e) => {
             e.stopPropagation();
-            openLightbox(imgs, i);
+            const liveImgs = document.querySelectorAll(
+              ".page.active .proj-gallery img, .page.active .proj-detail-hero img",
+            );
+            openLightbox(liveImgs, Array.from(liveImgs).indexOf(img));
           });
         });
-      });
+      }
+      document.addEventListener("DOMContentLoaded", initLightbox);
 
       function openLightbox(imgs, index) {
         lightboxImages = Array.from(imgs);
@@ -4546,103 +4592,6 @@
         if (e.key === "ArrowLeft") lightboxNav(-1);
         if (e.key === "Escape") closeLightbox();
       });
-
-      // ── Smooth in-page navigation + active state ───────
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll('a[data-link], a[href^="#"]').forEach((a) => {
-          a.addEventListener("click", (e) => {
-            const href = a.getAttribute("href");
-            if (!href || href === "#" || href.startsWith("javascript")) return;
-            if (href.startsWith("#")) {
-              const target = document.querySelector(href);
-              if (target) {
-                e.preventDefault();
-                const navH =
-                  document.querySelector("nav.main-nav")?.offsetHeight || 80;
-                const top =
-                  target.getBoundingClientRect().top +
-                  window.scrollY -
-                  (target.classList.contains("proj-detail-hero") ||
-                  target.querySelector(".proj-detail-hero") ||
-                  target.querySelector(".page-hero") ||
-                  target.classList.contains("aw-hero") ||
-                  target.querySelector(".aw-hero")
-                    ? 0
-                    : navH - 1);
-                window.scrollTo({ top, behavior: "smooth" });
-                if (history.replaceState) history.replaceState(null, "", href);
-              }
-            }
-          });
-        });
-
-        // Active nav highlight via IntersectionObserver
-        const sections = [
-          "startseite",
-          "portfolio",
-          "leistungen",
-          "about",
-          "faq",
-          "contact",
-          "about-website",
-        ]
-          .map((id) => document.getElementById(id))
-          .filter(Boolean);
-        const navItems = document.querySelectorAll(".nav-item");
-        const setActive = (id) => {
-          navItems.forEach((a) => {
-            a.classList.toggle("active", a.getAttribute("href") === "#" + id);
-          });
-        };
-        const sectionObs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) setActive(entry.target.id);
-            });
-          },
-          { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
-        );
-        sections.forEach((s) => sectionObs.observe(s));
-      });
-
-      // ── Subtle parallax on hero/philosophy images ──────
-      (function () {
-        const isReduced = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
-        if (isReduced) return;
-        const targets = [
-          { el: document.querySelector(".hero-image img"), strength: 0.08 },
-          {
-            el: document.querySelector(".philosophy-visual img"),
-            strength: 0.12,
-          },
-        ].filter((t) => t.el);
-
-        let ticking = false;
-        window.addEventListener(
-          "scroll",
-          () => {
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                const y = window.scrollY;
-                targets.forEach(({ el, strength }) => {
-                  if (!el) return;
-                  const rect = el.getBoundingClientRect();
-                  if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-                  const offset =
-                    (rect.top + rect.height / 2 - window.innerHeight / 2) *
-                    strength;
-                  el.style.transform = `translateY(${offset}px) scale(1.06)`;
-                });
-                ticking = false;
-              });
-              ticking = true;
-            }
-          },
-          { passive: true },
-        );
-      })();
     </script>
   </body>
 </html>
