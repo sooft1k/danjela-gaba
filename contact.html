@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danjela Gaba — Diplom-Ingenieurin für Architektur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="bilder/icon/favicon.png" />
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo"
+        >Danjela Gaba<span>Diplom-Ingenieurin · Architektur</span></a
+      >
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="about.html">Über Mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active nav-cta">Kontakt</a></li>
+        <li><a href="about-website.html">About This Website</a></li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleNav()"
+        aria-label="Menü"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html" onclick="toggleNav()">Startseite</a>
+      <a href="about.html" onclick="toggleNav()">Über Mich</a>
+      <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+      <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
+      <a href="faq.html" onclick="toggleNav()">FAQ</a>
+      <a
+        href="contact.html"
+        onclick="toggleNav()"
+        style="color: var(--gold-light)"
+        >Kontakt →</a
+      >
+      <a href="about-website.html" onclick="toggleNav()">About This Website</a>
+    </div>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label page-hero-eyebrow reveal">Kontakt</span>
+        <h1 class="page-hero-title reveal reveal-delay-1">
+          Lassen Sie uns<br />sprechen
+        </h1>
+        <p class="page-hero-sub reveal reveal-delay-2">
+          Das erste Gespräch ist kostenlos und unverbindlich
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 110px 0; background: var(--stone)">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info reveal">
+            <h2>Ich freue mich auf<br />Ihre Nachricht</h2>
+            <p>
+              Erzählen Sie mir von Ihrem Vorhaben — gemeinsam finden wir die
+              beste Lösung für Ihr Projekt.
+            </p>
+            <div class="contact-info-items">
+              <div class="contact-info-item">
+                <dt>E-Mail</dt>
+                <dd>
+                  <a href="mailto:danjela.gaba@hotmail.com"
+                    >danjela.gaba@hotmail.com</a
+                  >
+                </dd>
+              </div>
+              <div class="contact-info-item">
+                <dt>Telefon</dt>
+                <dd><a href="tel:+436766931597">+43 676 693 1597</a></dd>
+              </div>
+              <div class="contact-info-item">
+                <dt>Standort</dt>
+                <dd>Reisenbauer-Ring 7/1/6<br />2351 Wiener Neudorf, NÖ</dd>
+              </div>
+              <div style="margin-top: 24px; overflow: hidden">
+                <iframe
+                  src="https://maps.google.com/maps?q=Reisenbauer-Ring+7,+2351+Wiener+Neudorf,+Austria&output=embed&z=15"
+                  width="100%"
+                  height="220"
+                  style="
+                    border: 1px solid var(--stone-mid);
+                    display: block;
+                    filter: grayscale(30%);
+                  "
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+              <div class="contact-info-item" style="border-bottom: none">
+                <dt>Erreichbarkeit</dt>
+                <dd>Mo–Fr, 8:00–18:00 Uhr</dd>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal reveal-delay-1">
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/xnjgplkg"
+              method="POST"
+            >
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Ihr vollständiger Name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="email">E-Mail *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="ihre@email.at"
+                  />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="phone">Telefon</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+43 ..."
+                />
+              </div>
+              <div class="form-field">
+                <label for="projekt">Projektart</label>
+                <select id="projekt" name="projekt">
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option>Einfamilienhaus Neubau</option>
+                  <option>Wohnhaus / Mehrfamilienhaus</option>
+                  <option>Gewerbeobjekt</option>
+                  <option>Sanierung / Umbau</option>
+                  <option>Beratung</option>
+                  <option>Sonstiges</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="message">Nachricht *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Beschreiben Sie kurz Ihr Vorhaben — Standort, Größe, Zeitrahmen, Budget ..."
+                ></textarea>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="datenschutz-check" required />
+                <label for="datenschutz-check"
+                  >Ich habe die
+                  <a
+                    href="javascript:void(0)"
+                    onclick="openModal('datenschutz')"
+                    >Datenschutzerklärung</a
+                  >
+                  gelesen und stimme der Verarbeitung meiner Daten zu.</label
+                >
+              </div>
+              <button type="submit" class="btn-submit-form">
+                <span>Nachricht senden →</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ──────────────────────────────────────────── -->
+    <footer>
+      <span class="footer-credit">Website by Lennard Gaba</span>
+      <span class="footer-brand"
+        >© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span
+      >
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="openModal('impressum')"
+          >Impressum</a
+        >
+        <a href="javascript:void(0)" onclick="openModal('datenschutz')"
+          >Datenschutzerklärung</a
+        >
+      </div>
+    </footer>
+
+    <script src="shared.js"></script>
+  </body>
+</html>

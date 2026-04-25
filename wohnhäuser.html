@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderne Wohnanlage — Danjela Gaba Architektur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="bilder/icon/favicon.png" />
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo"
+        >Danjela Gaba<span>Diplom-Ingenieurin · Architektur</span></a
+      >
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="about.html">Über Mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
+        <li><a href="about-website.html">About This Website</a></li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleNav()"
+        aria-label="Menü"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html" onclick="toggleNav()">Startseite</a>
+      <a href="about.html" onclick="toggleNav()">Über Mich</a>
+      <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+      <a href="leistungen.html" onclick="toggleNav()">Leistungen</a>
+      <a href="faq.html" onclick="toggleNav()">FAQ</a>
+      <a
+        href="contact.html"
+        onclick="toggleNav()"
+        style="color: var(--gold-light)"
+        >Kontakt →</a
+      >
+      <a href="about-website.html" onclick="toggleNav()">About This Website</a>
+    </div>
+
+    <div class="proj-detail-hero" style="margin-top: 72px">
+      <img
+        src="bilder/wohnh%C3%A4user/wohnhaus.jpeg"
+        alt="Moderne Wohnanlage Wien"
+      />
+      <div class="proj-detail-hero-overlay">
+        <span class="section-label" style="margin-bottom: 16px; display: block"
+          >02 · Wohnbau · 2023</span
+        >
+        <h1 class="proj-detail-title">Moderne Wohnanlage</h1>
+        <span class="proj-detail-sub">Wien · 2.500 m²</span>
+      </div>
+    </div>
+
+    <section class="proj-detail-body">
+      <div class="container">
+        <div style="margin-bottom: 20px">
+          <a href="portfolio.html" class="arrow-link" style="font-size: 0.62rem"
+            >← Zurück zum Portfolio</a
+          >
+        </div>
+        <div class="proj-detail-grid">
+          <div class="proj-detail-main reveal">
+            <h2>Über das Projekt</h2>
+            <p>
+              Diese moderne Wohnanlage in Wien mit rund 2.500 m² Nutzfläche
+              schafft hochwertigen urbanen Wohnraum für mehrere Familien. Die
+              Herausforderung bestand darin, trotz der Verdichtung eine hohe
+              Wohnqualität zu sichern — mit ausreichend Privatsphäre,
+              Grünflächen und Gemeinschaftsbereichen.
+            </p>
+            <p>
+              Die zeitgemäße Architektursprache greift die städtische Umgebung
+              auf und setzt gleichzeitig einen ruhigen, eigenständigen Akzent.
+              Alle Wohneinheiten profitieren von optimaler Belichtung und
+              durchdachten Grundrissen.
+            </p>
+
+            <div class="proj-gallery reveal reveal-delay-1">
+              <div class="proj-gallery-full">
+                <img
+                  src="bilder/wohnh%C3%A4user/wohnhaus.jpeg"
+                  alt="Wohnanlage Gesamtansicht"
+                />
+              </div>
+            </div>
+          </div>
+
+          <aside class="proj-detail-sidebar reveal reveal-delay-2">
+            <div class="proj-info-block">
+              <dl>
+                <dt>Projekt</dt>
+                <dd>Moderne Wohnanlage</dd>
+                <dt>Standort</dt>
+                <dd>Wien</dd>
+                <dt>Jahr</dt>
+                <dd>2023</dd>
+                <dt>Fläche</dt>
+                <dd>ca. 2.500 m²</dd>
+                <dt>Kategorie</dt>
+                <dd>Wohnbau · Mehrfamilienhaus</dd>
+                <dt>Leistungen</dt>
+                <dd>Entwurfsplanung · Einreichplanung · Ausführungsplanung</dd>
+              </dl>
+            </div>
+            <a
+              href="contact.html"
+              class="btn-secondary"
+              style="width: 100%; justify-content: center"
+              ><span>Ähnliches Projekt anfragen</span></a
+            >
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <span class="section-label cta-label">Nächstes Projekt</span>
+      <h2>Lassen Sie uns<br />zusammenarbeiten</h2>
+      <p>Das erste Gespräch ist kostenlos und unverbindlich.</p>
+      <a href="contact.html" class="btn-primary"
+        ><span>Jetzt Kontakt aufnehmen</span></a
+      >
+    </section>
+
+    <!-- ─── FOOTER ──────────────────────────────────────────── -->
+    <footer>
+      <span class="footer-credit">Website by Lennard Gaba</span>
+      <span class="footer-brand"
+        >© 2026 Danjela Gaba — Diplom-Ingenieurin für Architektur</span
+      >
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="openModal('impressum')"
+          >Impressum</a
+        >
+        <a href="javascript:void(0)" onclick="openModal('datenschutz')"
+          >Datenschutz</a
+        >
+      </div>
+    </footer>
+
+    <script src="shared.js"></script>
+  </body>
+</html>
