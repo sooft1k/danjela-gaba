@@ -77,13 +77,15 @@ const SERVICES: Service[] = [
   },
 ];
 
-export default function Services() {
+export default function Services({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
-    <section id="services" className="section-pad bg-bone border-t border-stone">
+    <section id="services" className={`section-pad bg-bone ${hideHeader ? "" : "border-t border-stone"}`}>
       <div className="wrap">
-        <SectionHead num="02" label="Leistungen">
-          Alles aus <em className="text-moss">einer Hand</em>
-        </SectionHead>
+        {!hideHeader && (
+          <SectionHead num="02" label="Leistungen">
+            Alles aus <em className="text-moss">einer Hand</em>
+          </SectionHead>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-stone">
           {SERVICES.map((s, i) => (

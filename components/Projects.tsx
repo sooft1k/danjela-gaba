@@ -22,8 +22,8 @@ const PROJECTS: Project[] = [
     meta: ["Leopoldsdorf", "Wohnbau", "2024"],
     body:
       "Ein Einfamilienhaus, das sich aus dem Hang formt — großzügige Öffnungen lassen den Garten ins Innere strömen, klare Linien rahmen das Wesentliche.",
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=85",
-    alt: "Einfamilienhaus Leopoldsdorf",
+    src: "/bilder/einfamilienhaeuser/eingang.jpeg",
+    alt: "Einfamilienhaus Leopoldsdorf — Eingangsansicht",
   },
   {
     num: "02",
@@ -32,8 +32,8 @@ const PROJECTS: Project[] = [
     meta: ["Wien", "Mehrfamilienhaus", "2023"],
     body:
       "Hochwertiger urbaner Wohnraum für mehrere Familien. Verdichtung ohne Kompromisse: Privatsphäre, Belichtung, Grünflächen — alles bedacht.",
-    src: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1400&q=85",
-    alt: "Wohnanlage Wien",
+    src: "/bilder/wohnhaeuser/wohnhaus.jpeg",
+    alt: "Moderne Wohnanlage Wien",
   },
   {
     num: "03",
@@ -42,18 +42,20 @@ const PROJECTS: Project[] = [
     meta: ["Traiskirchen", "Gewerbebau", "2008"],
     body:
       "Repräsentativer Bürobereich vorne, funktionale Lagerflächen dahinter — eine klare Hierarchie, mit der Fassade als architektonischem Argument.",
-    src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1400&q=85",
-    alt: "Büro & Lagerhalle Traiskirchen",
+    src: "/bilder/gewerbeobjekte/gewerbeobjekt.JPEG",
+    alt: "Büro & Lagerhalle Traiskirchen — Gesamtansicht",
   },
 ];
 
-export default function Projects() {
+export default function Projects({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
-    <section id="portfolio" className="section-pad border-t border-bone">
+    <section id="portfolio" className={`section-pad ${hideHeader ? "" : "border-t border-bone"}`}>
       <div className="wrap">
-        <SectionHead num="03" label="Ausgewählte Projekte">
-          Werk &amp; <em className="text-moss">Realisierung</em>
-        </SectionHead>
+        {!hideHeader && (
+          <SectionHead num="03" label="Ausgewählte Projekte">
+            Werk &amp; <em className="text-moss">Realisierung</em>
+          </SectionHead>
+        )}
 
         <div className="flex flex-col gap-20 md:gap-32 lg:gap-40">
           {PROJECTS.map((p, i) => {

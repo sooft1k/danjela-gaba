@@ -26,13 +26,15 @@ const VALUES = [
   },
 ];
 
-export default function Philosophy() {
+export default function Philosophy({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
     <section id="philosophy" className="section-pad bg-ink text-paper">
       <div className="wrap">
-        <SectionHead num="04" label="Philosophie" dark>
-          Werte &amp; <em className="text-bone">Haltung</em>
-        </SectionHead>
+        {!hideHeader && (
+          <SectionHead num="04" label="Philosophie" dark>
+            Werte &amp; <em className="text-bone">Haltung</em>
+          </SectionHead>
+        )}
 
         <Reveal delay={0.1}>
           <blockquote className="max-w-[1100px]">

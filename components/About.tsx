@@ -11,21 +11,23 @@ const STATS = [
   { num: "0", suffix: "", label: "Kompromisse" },
 ];
 
-export default function About() {
+export default function About({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
-    <section id="about" className="section-pad border-t border-bone">
+    <section id="about" className={`section-pad ${hideHeader ? "" : "border-t border-bone"}`}>
       <div className="wrap">
-        <SectionHead num="01" label="Über das Studio">
-          Architektur ist <em className="text-moss">Haltung</em>, kein Beruf.
-        </SectionHead>
+        {!hideHeader && (
+          <SectionHead num="01" label="Über das Studio">
+            Architektur ist <em className="text-moss">Haltung</em>, kein Beruf.
+          </SectionHead>
+        )}
 
         <div className="grid md:grid-cols-[5fr_7fr] gap-8 md:gap-12 lg:gap-24 items-start">
           {/* Portrait */}
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden bg-bone group">
               <Image
-                src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=85"
-                alt="Danjela Gaba — Portrait"
+                src="/bilder/ueber-mich/Profilbild.png"
+                alt="Danjela Gaba — Diplom-Ingenieurin für Architektur"
                 fill
                 sizes="(max-width: 880px) 100vw, 40vw"
                 className="object-cover transition-[transform,filter] duration-[1400ms] ease-elegant

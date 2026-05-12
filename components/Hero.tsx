@@ -9,13 +9,13 @@ export default function Hero() {
       id="top"
       className="relative bg-shadow-deep text-paper overflow-hidden
                  grid grid-cols-[1.1fr_1fr] max-md:grid-cols-1 max-md:grid-rows-[50vh_50vh]
-                 min-h-screen [min-height:100svh]"
+                 [min-height:calc(100vh-74px)] [min-height:calc(100svh-74px)]"
     >
       {/* Image side */}
       <div className="relative overflow-hidden max-md:order-1">
         <Image
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85"
-          alt="Architektur"
+          src="/bilder/einfamilienhaeuser/eingang.jpeg"
+          alt="Einfamilienhaus Leopoldsdorf · Eingangsansicht"
           fill
           priority
           sizes="(max-width: 880px) 100vw, 55vw"
@@ -45,7 +45,7 @@ export default function Hero() {
         className="relative flex flex-col justify-between gap-10 max-md:order-2 max-md:gap-6"
         style={{
           padding:
-            "clamp(80px, 12vh, 140px) var(--gutter) clamp(40px, 6vh, 80px)",
+            "clamp(48px, 7vh, 96px) var(--gutter) clamp(40px, 6vh, 80px)",
         }}
       >
         {/* Top meta */}
@@ -99,13 +99,13 @@ export default function Hero() {
           </p>
           <div className="flex flex-col items-end gap-4 max-md:flex-row max-md:items-stretch">
             <a
-              href="#portfolio"
+              href="/projekte"
               className="btn btn-fill max-md:flex-1 max-md:justify-center"
             >
               Projekte
             </a>
             <a
-              href="#contact"
+              href="/kontakt"
               className="btn btn-ghost max-md:flex-1 max-md:justify-center"
             >
               Kontakt

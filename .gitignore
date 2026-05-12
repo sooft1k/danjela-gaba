@@ -5,5 +5,3 @@ out
 *.log
 .env*.local
 .vercel
-
-.vercel

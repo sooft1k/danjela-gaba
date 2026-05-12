@@ -3,34 +3,35 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "#about", label: "Über", num: "01" },
-  { href: "#services", label: "Leistungen", num: "02" },
-  { href: "#portfolio", label: "Projekte", num: "03" },
-  { href: "#philosophy", label: "Philosophie", num: "04" },
-  { href: "#testimonials", label: "Stimmen", num: "05" },
+  { href: "/",            label: "Studio",      num: "00" },
+  { href: "/ueber",       label: "Über",        num: "01" },
+  { href: "/leistungen",  label: "Leistungen",  num: "02" },
+  { href: "/projekte",    label: "Projekte",    num: "03" },
+  { href: "/philosophie", label: "Philosophie", num: "04" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Close on Escape
+  useEffect(() => { setOpen(false); }, [pathname]);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -38,94 +39,117 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <>
-      <nav
+      <header
         className={[
-          "fixed top-0 left-0 right-0 z-[100] grid items-center gap-8 text-paper",
-          "grid-cols-[auto_1fr_auto] md:grid-cols-[auto_1fr_auto] max-md:grid-cols-[1fr_auto]",
-          "transition-[padding] duration-500 ease-elegant",
-          scrolled ? "py-[14px]" : "py-[22px]",
+          "fixed top-0 left-0 right-0 z-[100]",
+          "transition-all duration-500 ease-elegant",
+          scrolled
+            ? "bg-paper/95 backdrop-blur-md border-b border-stone shadow-[0_1px_0_rgba(31,29,26,0.04)]"
+            : "bg-paper border-b border-bone",
         ].join(" ")}
-        style={{
-          paddingLeft: "var(--gutter)",
-          paddingRight: "var(--gutter)",
-          mixBlendMode: "difference",
-        }}
       >
-        <Link
-          href="#top"
-          className="font-display text-[17px] leading-tight"
+        <nav
+          className={[
+            "grid items-center gap-8 grid-cols-[auto_1fr_auto] max-md:grid-cols-[1fr_auto]",
+            "transition-[padding] duration-500 ease-elegant",
+            scrolled ? "py-3" : "py-5",
+          ].join(" ")}
           style={{
-            fontVariationSettings: '"opsz" 36, "SOFT" 50',
-            letterSpacing: "-0.01em",
-            fontWeight: 300,
+            paddingLeft: "var(--gutter)",
+            paddingRight: "var(--gutter)",
           }}
         >
-          Danjela Gaba
-          <span className="block font-mono text-[9.5px] uppercase tracking-editorial opacity-70 mt-[2px]">
-            Architektur · Wien · NÖ
-          </span>
-        </Link>
+          <Link href="/" className="flex items-baseline gap-3">
+            <span
+              className="font-display text-[22px] leading-none text-ink"
+              style={{
+                fontVariationSettings: '"opsz" 36, "SOFT" 50',
+                letterSpacing: "-0.015em",
+                fontWeight: 500,
+              }}
+            >
+              Danjela Gaba
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-editorial text-grey-warm max-md:hidden">
+              Architektur · Wien · NÖ
+            </span>
+          </Link>
 
-        <ul className="flex justify-center gap-9 max-md:hidden list-none">
-          {NAV_LINKS.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="relative font-mono text-[11px] uppercase tracking-editorial py-1 group"
-              >
-                {l.label}
-                <span
-                  className="absolute left-0 bottom-0 h-px w-full bg-current
-                             scale-x-0 origin-right transition-transform duration-500 ease-elegant
-                             group-hover:scale-x-100 group-hover:origin-left"
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="flex justify-center gap-1 max-md:hidden list-none">
+            {NAV_LINKS.map((l) => {
+              const active = isActive(l.href);
+              return (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className={[
+                      "relative font-mono uppercase tracking-editorial",
+                      "text-[12px] font-medium px-4 py-2.5",
+                      "transition-colors duration-300",
+                      active ? "text-ink" : "text-grey-warm hover:text-ink",
+                    ].join(" ")}
+                  >
+                    {l.label}
+                    {active && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute left-3 right-3 -bottom-px h-[2px] bg-ink"
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-        <a
-          href="#contact"
-          className="font-mono text-[11px] uppercase tracking-editorial inline-flex items-center gap-2
-                     transition-[gap] duration-500 ease-elegant hover:gap-[14px] max-md:hidden
-                     after:content-['→']"
-        >
-          Erstgespräch
-        </a>
+          <Link
+            href="/kontakt"
+            className="max-md:hidden font-mono uppercase tracking-editorial
+                       text-[12px] font-medium inline-flex items-center gap-2.5
+                       px-5 py-3 transition-all duration-500 ease-elegant
+                       border bg-ink text-paper border-ink
+                       hover:bg-transparent hover:text-ink"
+          >
+            Erstgespräch
+            <span aria-hidden>→</span>
+          </Link>
 
-        <button
-          aria-label="Menü"
-          aria-expanded={open}
-          className="md:hidden relative w-7 h-[18px] justify-self-end"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span
-            className={`absolute left-0 right-0 h-px bg-current transition-all duration-400 ease-elegant ${
-              open ? "top-2 rotate-45" : "top-0"
-            }`}
-          />
-          <span
-            className={`absolute left-0 right-0 h-px bg-current top-2 transition-opacity duration-300 ${
-              open ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`absolute left-0 right-0 h-px bg-current transition-all duration-400 ease-elegant ${
-              open ? "top-2 -rotate-45" : "top-4"
-            }`}
-          />
-        </button>
-      </nav>
+          <button
+            aria-label="Menü"
+            aria-expanded={open}
+            className="md:hidden relative w-8 h-5 justify-self-end text-ink"
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span
+              className={`absolute left-0 right-0 h-[2px] bg-current transition-all duration-400 ease-elegant ${
+                open ? "top-[9px] rotate-45" : "top-0"
+              }`}
+            />
+            <span
+              className={`absolute left-0 right-0 h-[2px] bg-current top-[9px] transition-opacity duration-300 ${
+                open ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute left-0 right-0 h-[2px] bg-current transition-all duration-400 ease-elegant ${
+                open ? "top-[9px] -rotate-45" : "top-[18px]"
+              }`}
+            />
+          </button>
+        </nav>
+      </header>
 
       <AnimatePresence>
         {open && (
           <motion.div
             className="fixed inset-0 bg-ink text-paper z-[90] flex flex-col justify-between md:hidden"
-            style={{
-              padding: "100px var(--gutter) 40px",
-            }}
+            style={{ padding: "100px var(--gutter) 40px" }}
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
@@ -137,24 +161,25 @@ export default function Navbar() {
                   key={l.href}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.2 + i * 0.05,
-                    duration: 0.7,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
+                  transition={{ delay: 0.2 + i * 0.05, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <a
+                  <Link
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="display-l flex items-baseline gap-[18px]
-                               text-[clamp(40px,12vw,72px)]
-                               transition-opacity duration-400 hover:opacity-50"
+                    className="font-display flex items-baseline gap-4
+                               text-[clamp(40px,12vw,72px)] leading-[1.05]
+                               transition-opacity duration-400 hover:opacity-60"
+                    style={{
+                      fontVariationSettings: '"opsz" 144, "SOFT" 50',
+                      fontWeight: 300,
+                      letterSpacing: "-0.02em",
+                    }}
                   >
                     <span className="font-mono text-[11px] uppercase tracking-editorial opacity-40">
                       {l.num}
                     </span>
                     {l.label}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
               <motion.li
@@ -162,18 +187,24 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                <a
-                  href="#contact"
+                <Link
+                  href="/kontakt"
                   onClick={() => setOpen(false)}
-                  className="display-l flex items-baseline gap-[18px]
-                             text-[clamp(40px,12vw,72px)]"
-                  style={{ color: "var(--bone, #E8E2D5)" }}
+                  className="font-display flex items-baseline gap-4
+                             text-[clamp(40px,12vw,72px)] leading-[1.05]"
+                  style={{
+                    fontVariationSettings: '"opsz" 144, "SOFT" 100, "WONK" 1',
+                    fontWeight: 300,
+                    letterSpacing: "-0.02em",
+                    fontStyle: "italic",
+                    color: "#E8E2D5",
+                  }}
                 >
-                  <span className="font-mono text-[11px] uppercase tracking-editorial opacity-40">
-                    06
+                  <span className="font-mono text-[11px] uppercase tracking-editorial opacity-40 not-italic">
+                    05
                   </span>
-                  <em>Kontakt</em>
-                </a>
+                  Kontakt
+                </Link>
               </motion.li>
             </ul>
             <div className="flex justify-between font-mono text-[11px] uppercase tracking-editorial opacity-60">
@@ -183,6 +214,8 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div className={scrolled ? "h-[62px]" : "h-[74px]"} aria-hidden="true" />
     </>
   );
 }

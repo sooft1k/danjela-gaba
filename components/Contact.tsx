@@ -18,15 +18,17 @@ const INFO = [
   { label: "Mo–Fr", value: "08:00 – 18:00 Uhr" },
 ];
 
-export default function Contact() {
+export default function Contact({ hideHeader = false }: { hideHeader?: boolean }) {
   const [accepted, setAccepted] = useState(false);
 
   return (
-    <section id="contact" className="section-pad bg-bone border-t border-stone">
+    <section id="contact" className={`section-pad bg-bone ${hideHeader ? "" : "border-t border-stone"}`}>
       <div className="wrap">
-        <SectionHead num="06" label="Kontakt">
-          Lassen Sie uns <em className="text-moss">sprechen.</em>
-        </SectionHead>
+        {!hideHeader && (
+          <SectionHead num="06" label="Kontakt">
+            Lassen Sie uns <em className="text-moss">sprechen.</em>
+          </SectionHead>
+        )}
 
         <div className="grid md:grid-cols-[5fr_7fr] gap-10 md:gap-16 lg:gap-32 items-start">
           {/* Info column */}
